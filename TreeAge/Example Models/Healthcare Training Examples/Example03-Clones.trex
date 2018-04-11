@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:tree="http://www.treeage.com/modeldefs/tree">
+  <tree:Tree xmi:id="_0bKIELHwEd-gJIGoZuZDPg">
+    <Node xmi:id="_0bKIEbHwEd-gJIGoZuZDPg" NameID="Node1" Label="Evaluate new treatment" NodeType="DecisionNode">
+      <Definition xmi:id="_0bKIFLHwEd-gJIGoZuZDPg" Variable="cRadiation" Value="30K"/>
+      <Definition xmi:id="_0bKIFrHwEd-gJIGoZuZDPg" Variable="cFollowupAnnual" Value="2K"/>
+      <Definition xmi:id="_0bKIF7HwEd-gJIGoZuZDPg" Variable="effEradicated" Value="10"/>
+      <Definition xmi:id="_0bKIGLHwEd-gJIGoZuZDPg" Variable="effNotEradicated" Value="3"/>
+      <Definition xmi:id="_z_qyALIIEd-gJIGoZuZDPg" Variable="cSurgery" Value="50K"/>
+      <Definition xmi:id="_09cB0LIIEd-gJIGoZuZDPg" Variable="pEradicateRad" Value="0.6"/>
+      <Definition xmi:id="_1wZIwLIIEd-gJIGoZuZDPg" Variable="pEradicateRadSurg" Value="0.8"/>
+      <Node xmi:id="_0bKIGbHwEd-gJIGoZuZDPg" NameID="Node2" Label="Standard treatment:&#xD;&#xA;Radiation" NodeType="ChanceNode" CloneMasterIndex="1" CloneMasterName="Treatment outcomes">
+        <Definition xmi:id="_-IIjsLHwEd-gJIGoZuZDPg" Variable="pEradicateGeneric" Value="pEradicateRad"/>
+        <Definition xmi:id="_Fbif4LHxEd-gJIGoZuZDPg" Variable="cTreatmentGeneric" Value="cRadiation"/>
+        <Node xmi:id="_0bKIGrHwEd-gJIGoZuZDPg" NameID="Node3" Label="Radiation eradicates tumor" NodeType="TerminalNode">
+          <Prob xmi:id="_0bKIG7HwEd-gJIGoZuZDPg" Value="pEradicateGeneric"/>
+          <Payoff xmi:id="_ixRDwLHxEd-gJIGoZuZDPg" Set="1" Value="cTreatmentGeneric + (cFollowupAnnual*effEradicated)"/>
+          <Payoff xmi:id="_ixRDwbHxEd-gJIGoZuZDPg" Set="2" Value="effEradicated"/>
+        </Node>
+        <Node xmi:id="_0bKIHrHwEd-gJIGoZuZDPg" NameID="Node4" Label="Radiation fails to eradicate tumor" NodeType="TerminalNode">
+          <Prob xmi:id="_0bKIH7HwEd-gJIGoZuZDPg" Value="#"/>
+          <Payoff xmi:id="_dUvwsLHxEd-gJIGoZuZDPg" Set="1" Value="cTreatmentGeneric + (cFollowupAnnual*effNotEradicated)"/>
+          <Payoff xmi:id="_dUvwsbHxEd-gJIGoZuZDPg" Set="2" Value="effNotEradicated"/>
+        </Node>
+      </Node>
+      <Node xmi:id="_0bKIIrHwEd-gJIGoZuZDPg" NameID="Node5" Label="New treatment:&#xD;&#xA;Surgery and radiation" NodeType="ChanceNode" AttachToCloneMaster="1" Node="">
+        <Definition xmi:id="_Ad6IQLHxEd-gJIGoZuZDPg" Variable="pEradicateGeneric" Value="pEradicateRadSurg"/>
+        <Definition xmi:id="_JNHUELHxEd-gJIGoZuZDPg" Variable="cTreatmentGeneric" Value="cRadiation + cSurgery"/>
+      </Node>
+    </Node>
+    <Variable xmi:id="_0bKIK7HwEd-gJIGoZuZDPg" NameID="pEradicateRad" Label="Prob tumor is eradicated by radiation" Comment=""/>
+    <Variable xmi:id="_0bKILLHwEd-gJIGoZuZDPg" NameID="pEradicateRadSurg" Label="Prob tumor is eradicated by radiation and surgery" Comment=""/>
+    <Variable xmi:id="_0bKILbHwEd-gJIGoZuZDPg" NameID="cRadiation" Label="Cost of radiation" Comment=""/>
+    <Variable xmi:id="_0bKILrHwEd-gJIGoZuZDPg" NameID="cSurgery" Label="Cost of surgery" Comment=""/>
+    <Variable xmi:id="_0bPAkLHwEd-gJIGoZuZDPg" NameID="cFollowupAnnual" Label="Cost of followup per year" Comment=""/>
+    <Variable xmi:id="_0bPAkbHwEd-gJIGoZuZDPg" NameID="effEradicated" Label="Life expectancy if tumor eradicated" Comment=""/>
+    <Variable xmi:id="_0bPAkrHwEd-gJIGoZuZDPg" NameID="effNotEradicated" Label="Life expectancy if tumor is not eradicated" Comment=""/>
+    <Variable xmi:id="_8eqEcLHwEd-gJIGoZuZDPg" NameID="pEradicateGeneric" Label="Generic variable for clones, no sensitivity analysis" Comment=""/>
+    <Variable xmi:id="_EhWvkLHxEd-gJIGoZuZDPg" NameID="cTreatmentGeneric" Label="Generic variable for clones, no sensitivity analysis" Comment=""/>
+    <CategoriesRoot xmi:id="_0bPAk7HwEd-gJIGoZuZDPg"/>
+    <PreferenceSet xmi:id="_0bPAlLHwEd-gJIGoZuZDPg" NameID="Pref. set 1">
+      <Preference xmi:id="_0bPAlbHwEd-gJIGoZuZDPg" Name="rollbackCalc" Value="rbc_evs"/>
+      <Preference xmi:id="_0bPAlrHwEd-gJIGoZuZDPg" Name="useRiskFunction" Value="false"/>
+      <Preference xmi:id="_0bPAl7HwEd-gJIGoZuZDPg" Name="autoCalculateProbabilities" Value="false"/>
+      <Preference xmi:id="_0bPAmLHwEd-gJIGoZuZDPg" Name="mainPayoff" Value="1"/>
+      <Preference xmi:id="_0bPAmbHwEd-gJIGoZuZDPg" Name="markovMonteFastTermination" Value="true"/>
+      <Preference xmi:id="_0bPAmrHwEd-gJIGoZuZDPg" Name="bcCostPayoff" Value="2"/>
+      <Preference xmi:id="_0bPAm7HwEd-gJIGoZuZDPg" Name="bcBenPayoff" Value="1"/>
+      <Preference xmi:id="_0bPAnLHwEd-gJIGoZuZDPg" Name="ceCostPayoff" Value="1"/>
+      <Preference xmi:id="_0bPAnbHwEd-gJIGoZuZDPg" Name="ceEffPayoff" Value="2"/>
+      <Preference xmi:id="_0bPAnrHwEd-gJIGoZuZDPg" Name="calcType" Value="ct_costEff"/>
+      <Preference xmi:id="_0bPAn7HwEd-gJIGoZuZDPg" Name="allowTerminalNodeActPayoff" Value="false"/>
+      <Preference xmi:id="_0bPAoLHwEd-gJIGoZuZDPg" Name="attributeWeight1" Value=""/>
+      <Preference xmi:id="_0bPAobHwEd-gJIGoZuZDPg" Name="attributeWeight2" Value=""/>
+      <Preference xmi:id="_0bPAorHwEd-gJIGoZuZDPg" Name="attributeWeight3" Value=""/>
+      <Preference xmi:id="_0bPAo7HwEd-gJIGoZuZDPg" Name="attributeWeight4" Value=""/>
+      <Preference xmi:id="_0bPApLHwEd-gJIGoZuZDPg" Name="attributeWeight5" Value=""/>
+      <Preference xmi:id="_0bPApbHwEd-gJIGoZuZDPg" Name="attributeWeight6" Value=""/>
+      <Preference xmi:id="_0bPAprHwEd-gJIGoZuZDPg" Name="attributeWeight7" Value=""/>
+      <Preference xmi:id="_0bPAp7HwEd-gJIGoZuZDPg" Name="attributeWeight8" Value=""/>
+      <Preference xmi:id="_0bPAqLHwEd-gJIGoZuZDPg" Name="attributeWeight9" Value=""/>
+      <Preference xmi:id="_0bPAqbHwEd-gJIGoZuZDPg" Name="forCostEffectivenessevDecPlaces" Value="0"/>
+      <Preference xmi:id="_0bPAqrHwEd-gJIGoZuZDPg" Name="forCostEffectivenessthousandsSep" Value="true"/>
+      <Preference xmi:id="_0bPAq7HwEd-gJIGoZuZDPg" Name="forCostEffectivenesschopOffKMBPercent" Value="showExactly"/>
+      <Preference xmi:id="_0bPArLHwEd-gJIGoZuZDPg" Name="forCostEffectivenessunitsType" Value="unitsType_currency"/>
+      <Preference xmi:id="_0bPArbHwEd-gJIGoZuZDPg" Name="forCostEffectivenessunitsText" Value=""/>
+      <Preference xmi:id="_0bPArrHwEd-gJIGoZuZDPg" Name="forBenefitCostevDecPlaces" Value="0"/>
+      <Preference xmi:id="_0bPAr7HwEd-gJIGoZuZDPg" Name="forBenefitCostthousandsSep" Value="true"/>
+      <Preference xmi:id="_0bPAsLHwEd-gJIGoZuZDPg" Name="forBenefitCostchopOffKMBPercent" Value="showExactly"/>
+      <Preference xmi:id="_0bPAsbHwEd-gJIGoZuZDPg" Name="forBenefitCostunitsType" Value="unitsType_currency"/>
+      <Preference xmi:id="_0bPAsrHwEd-gJIGoZuZDPg" Name="forBenefitCostunitsText" Value=""/>
+      <Preference xmi:id="_0bPAs7HwEd-gJIGoZuZDPg" Name="forMultiAttributeevDecPlaces" Value="0"/>
+      <Preference xmi:id="_0bPAtLHwEd-gJIGoZuZDPg" Name="forMultiAttributethousandsSep" Value="true"/>
+      <Preference xmi:id="_0bPAtbHwEd-gJIGoZuZDPg" Name="forMultiAttributechopOffKMBPercent" Value="showExactly"/>
+      <Preference xmi:id="_0bPAtrHwEd-gJIGoZuZDPg" Name="forMultiAttributeunitsType" Value="unitsType_currency"/>
+      <Preference xmi:id="_0bPAt7HwEd-gJIGoZuZDPg" Name="forMultiAttributeunitsText" Value=""/>
+      <Preference xmi:id="_0bPAuLHwEd-gJIGoZuZDPg" Name="optimalPathMultiAttribute" Value="opt_high"/>
+      <Preference xmi:id="_0bPAubHwEd-gJIGoZuZDPg" Name="optimalPathBenCost" Value="opt_high"/>
+      <Preference xmi:id="_0bPAurHwEd-gJIGoZuZDPg" Name="optimalPathCostEff" Value="opt_low"/>
+      <Preference xmi:id="_0bPAu7HwEd-gJIGoZuZDPg" Name="fastRollBack" Value="false"/>
+      <Preference xmi:id="_0bPAvLHwEd-gJIGoZuZDPg" Name="optType1" Value="opt_high"/>
+      <Preference xmi:id="_0bPAvbHwEd-gJIGoZuZDPg" Name="forPayoff1evDecPlaces" Value="0"/>
+      <Preference xmi:id="_0bPAvrHwEd-gJIGoZuZDPg" Name="forPayoff1thousandsSep" Value="true"/>
+      <Preference xmi:id="_0bPAv7HwEd-gJIGoZuZDPg" Name="forPayoff1chopOffKMBPercent" Value="showExactly"/>
+      <Preference xmi:id="_0bPAwLHwEd-gJIGoZuZDPg" Name="forPayoff1unitsType" Value="unitsType_currency"/>
+      <Preference xmi:id="_0bPAwbHwEd-gJIGoZuZDPg" Name="forPayoff1unitsText" Value=""/>
+      <Preference xmi:id="_0bPAwrHwEd-gJIGoZuZDPg" Name="optType2" Value="opt_high"/>
+      <Preference xmi:id="_0bPAw7HwEd-gJIGoZuZDPg" Name="forPayoff2evDecPlaces" Value="2"/>
+      <Preference xmi:id="_0bPAxLHwEd-gJIGoZuZDPg" Name="forPayoff2thousandsSep" Value="true"/>
+      <Preference xmi:id="_0bPAxbHwEd-gJIGoZuZDPg" Name="forPayoff2chopOffKMBPercent" Value="showExactly"/>
+      <Preference xmi:id="_0bPAxrHwEd-gJIGoZuZDPg" Name="forPayoff2unitsType" Value="unitsType_suffix"/>
+      <Preference xmi:id="_0bPAx7HwEd-gJIGoZuZDPg" Name="forPayoff2unitsText" Value="LY"/>
+      <Preference xmi:id="_0bPAyLHwEd-gJIGoZuZDPg" Name="optType3" Value="opt_high"/>
+      <Preference xmi:id="_0bPAybHwEd-gJIGoZuZDPg" Name="forPayoff3evDecPlaces" Value="0"/>
+      <Preference xmi:id="_0bPAyrHwEd-gJIGoZuZDPg" Name="forPayoff3thousandsSep" Value="true"/>
+      <Preference xmi:id="_0bPAy7HwEd-gJIGoZuZDPg" Name="forPayoff3chopOffKMBPercent" Value="showExactly"/>
+      <Preference xmi:id="_0bPAzLHwEd-gJIGoZuZDPg" Name="forPayoff3unitsType" Value="unitsType_currency"/>
+      <Preference xmi:id="_0bPAzbHwEd-gJIGoZuZDPg" Name="forPayoff3unitsText" Value=""/>
+      <Preference xmi:id="_0bPAzrHwEd-gJIGoZuZDPg" Name="optType4" Value="opt_high"/>
+      <Preference xmi:id="_0bPAz7HwEd-gJIGoZuZDPg" Name="forPayoff4evDecPlaces" Value="0"/>
+      <Preference xmi:id="_0bPA0LHwEd-gJIGoZuZDPg" Name="forPayoff4thousandsSep" Value="true"/>
+      <Preference xmi:id="_0bPA0bHwEd-gJIGoZuZDPg" Name="forPayoff4chopOffKMBPercent" Value="showExactly"/>
+      <Preference xmi:id="_0bPA0rHwEd-gJIGoZuZDPg" Name="forPayoff4unitsType" Value="unitsType_currency"/>
+      <Preference xmi:id="_0bPA07HwEd-gJIGoZuZDPg" Name="forPayoff4unitsText" Value=""/>
+      <Preference xmi:id="_0bPA1LHwEd-gJIGoZuZDPg" Name="optType5" Value="opt_high"/>
+      <Preference xmi:id="_0bPA1bHwEd-gJIGoZuZDPg" Name="forPayoff5evDecPlaces" Value="0"/>
+      <Preference xmi:id="_0bPA1rHwEd-gJIGoZuZDPg" Name="forPayoff5thousandsSep" Value="true"/>
+      <Preference xmi:id="_0bPA17HwEd-gJIGoZuZDPg" Name="forPayoff5chopOffKMBPercent" Value="showExactly"/>
+      <Preference xmi:id="_0bPA2LHwEd-gJIGoZuZDPg" Name="forPayoff5unitsType" Value="unitsType_currency"/>
+      <Preference xmi:id="_0bPA2bHwEd-gJIGoZuZDPg" Name="forPayoff5unitsText" Value=""/>
+      <Preference xmi:id="_0bPA2rHwEd-gJIGoZuZDPg" Name="optType6" Value="opt_high"/>
+      <Preference xmi:id="_0bPA27HwEd-gJIGoZuZDPg" Name="forPayoff6evDecPlaces" Value="0"/>
+      <Preference xmi:id="_0bPA3LHwEd-gJIGoZuZDPg" Name="forPayoff6thousandsSep" Value="true"/>
+      <Preference xmi:id="_0bPA3bHwEd-gJIGoZuZDPg" Name="forPayoff6chopOffKMBPercent" Value="showExactly"/>
+      <Preference xmi:id="_0bPA3rHwEd-gJIGoZuZDPg" Name="forPayoff6unitsType" Value="unitsType_currency"/>
+      <Preference xmi:id="_0bPA37HwEd-gJIGoZuZDPg" Name="forPayoff6unitsText" Value=""/>
+      <Preference xmi:id="_0bPA4LHwEd-gJIGoZuZDPg" Name="optType7" Value="opt_high"/>
+      <Preference xmi:id="_0bPA4bHwEd-gJIGoZuZDPg" Name="forPayoff7evDecPlaces" Value="0"/>
+      <Preference xmi:id="_0bPA4rHwEd-gJIGoZuZDPg" Name="forPayoff7thousandsSep" Value="true"/>
+      <Preference xmi:id="_0bPA47HwEd-gJIGoZuZDPg" Name="forPayoff7chopOffKMBPercent" Value="showExactly"/>
+      <Preference xmi:id="_0bPA5LHwEd-gJIGoZuZDPg" Name="forPayoff7unitsType" Value="unitsType_currency"/>
+      <Preference xmi:id="_0bPA5bHwEd-gJIGoZuZDPg" Name="forPayoff7unitsText" Value=""/>
+      <Preference xmi:id="_0bPA5rHwEd-gJIGoZuZDPg" Name="optType8" Value="opt_high"/>
+      <Preference xmi:id="_0bPA57HwEd-gJIGoZuZDPg" Name="forPayoff8evDecPlaces" Value="0"/>
+      <Preference xmi:id="_0bPA6LHwEd-gJIGoZuZDPg" Name="forPayoff8thousandsSep" Value="true"/>
+      <Preference xmi:id="_0bPA6bHwEd-gJIGoZuZDPg" Name="forPayoff8chopOffKMBPercent" Value="showExactly"/>
+      <Preference xmi:id="_0bPA6rHwEd-gJIGoZuZDPg" Name="forPayoff8unitsType" Value="unitsType_currency"/>
+      <Preference xmi:id="_0bPA67HwEd-gJIGoZuZDPg" Name="forPayoff8unitsText" Value=""/>
+      <Preference xmi:id="_0bPA7LHwEd-gJIGoZuZDPg" Name="optType9" Value="opt_high"/>
+      <Preference xmi:id="_0bPA7bHwEd-gJIGoZuZDPg" Name="forPayoff9evDecPlaces" Value="0"/>
+      <Preference xmi:id="_0bPA7rHwEd-gJIGoZuZDPg" Name="forPayoff9thousandsSep" Value="true"/>
+      <Preference xmi:id="_0bPA77HwEd-gJIGoZuZDPg" Name="forPayoff9chopOffKMBPercent" Value="showExactly"/>
+      <Preference xmi:id="_0bPA8LHwEd-gJIGoZuZDPg" Name="forPayoff9unitsType" Value="unitsType_currency"/>
+      <Preference xmi:id="_0bPA8bHwEd-gJIGoZuZDPg" Name="forPayoff9unitsText" Value=""/>
+      <Preference xmi:id="_hrOokH0hEeKkl92cA_2TBg" Name="useCustomRegionalNumericSettings" Value="false"/>
+      <Preference xmi:id="_0bPA87HwEd-gJIGoZuZDPg" Name="numberOfEnabledPayoffs" Value="4"/>
+      <Preference xmi:id="_0bPA9LHwEd-gJIGoZuZDPg" Name="allowProbabilitiesNotSumTo1" Value="false"/>
+      <Preference xmi:id="_0bPA9bHwEd-gJIGoZuZDPg" Name="randomizeDiscreteIndividuals" Value="false"/>
+      <Preference xmi:id="_0bPA9rHwEd-gJIGoZuZDPg" Name="useAttributesWeights" Value="false"/>
+      <Preference xmi:id="_0bPA97HwEd-gJIGoZuZDPg" Name="fontDefault_1_0_0" Value="Arial,10,0,0"/>
+      <Preference xmi:id="_0bPA-LHwEd-gJIGoZuZDPg" Name="fontEV_1_0_0" Value="Arial,10,0,0"/>
+      <Preference xmi:id="_0bPA-bHwEd-gJIGoZuZDPg" Name="fontProbability_1_0_0" Value="Arial,8,0,0"/>
+      <Preference xmi:id="_0bPA-rHwEd-gJIGoZuZDPg" Name="alignEndNodes" Value="false"/>
+      <Preference xmi:id="_0bPA-7HwEd-gJIGoZuZDPg" Name="addBranchesAt" Value="true"/>
+      <Preference xmi:id="_0bPA_LHwEd-gJIGoZuZDPg" Name="displayCalculatedProbabilities" Value="true"/>
+      <Preference xmi:id="_0bPA_bHwEd-gJIGoZuZDPg" Name="displayDefinitionsAtNodes" Value="vShow"/>
+      <Preference xmi:id="_0bPA_rHwEd-gJIGoZuZDPg" Name="useStripedBranchLines" Value="false"/>
+      <Preference xmi:id="_0bPA_7HwEd-gJIGoZuZDPg" Name="displayEV" Value="false"/>
+      <Preference xmi:id="_0bPBALHwEd-gJIGoZuZDPg" Name="defaultBranchesPerNode" Value="2"/>
+      <Preference xmi:id="_0bPBAbHwEd-gJIGoZuZDPg" Name="automaticNodeNumbering" Value="false"/>
+      <Preference xmi:id="_0bPBArHwEd-gJIGoZuZDPg" Name="displayPayoffsName" Value="true"/>
+      <Preference xmi:id="_0bPBA7HwEd-gJIGoZuZDPg" Name="annotationBoxBorder" Value="vDashed"/>
+      <Preference xmi:id="_0bPBBLHwEd-gJIGoZuZDPg" Name="showBreaks" Value="false"/>
+      <Preference xmi:id="_0bPBBbHwEd-gJIGoZuZDPg" Name="flagNodesWithComments" Value="true"/>
+      <Preference xmi:id="_0bPBBrHwEd-gJIGoZuZDPg" Name="expandNode" Value="true"/>
+      <Preference xmi:id="_0bPBB7HwEd-gJIGoZuZDPg" Name="branchesLinesAt" Value="false"/>
+      <Preference xmi:id="_0bPBCLHwEd-gJIGoZuZDPg" Name="displayPayoffsBoxed" Value="false"/>
+      <Preference xmi:id="_0bPBCbHwEd-gJIGoZuZDPg" Name="fontVariable_1_0_0" Value="Arial,8,0,0"/>
+      <Preference xmi:id="_0bPBCrHwEd-gJIGoZuZDPg" Name="arrowheadsize" Value="vSmall"/>
+      <Preference xmi:id="_0bPBC7HwEd-gJIGoZuZDPg" Name="linestyle" Value="vSolid"/>
+      <Preference xmi:id="_0bPBDLHwEd-gJIGoZuZDPg" Name="showHeaders" Value="false"/>
+      <Preference xmi:id="_0bPBDbHwEd-gJIGoZuZDPg" Name="headerText" Value=""/>
+      <Preference xmi:id="_0bPBDrHwEd-gJIGoZuZDPg" Name="footerText" Value=""/>
+      <Preference xmi:id="_0bPBD7HwEd-gJIGoZuZDPg" Name="alignHeader" Value="left"/>
+      <Preference xmi:id="_0bPBELHwEd-gJIGoZuZDPg" Name="alignFooter" Value="right"/>
+      <Preference xmi:id="_0bPBEbHwEd-gJIGoZuZDPg" Name="fontHeader_1_0_0" Value="Arial,12,0,0"/>
+      <Preference xmi:id="_0bPBErHwEd-gJIGoZuZDPg" Name="fontFooter_1_0_0" Value="Arial,12,0,0"/>
+      <Preference xmi:id="_0bPBE7HwEd-gJIGoZuZDPg" Name="minimizeEmptySpace" Value="false"/>
+      <Preference xmi:id="_0bPBFLHwEd-gJIGoZuZDPg" Name="showMarkovInformation" Value="true"/>
+      <Preference xmi:id="_0bPBFbHwEd-gJIGoZuZDPg" Name="hideAllNodeTexts" Value="false"/>
+      <Preference xmi:id="_0bPBFrHwEd-gJIGoZuZDPg" Name="showTerminalNodeSymbolsAs" Value="vTriangles"/>
+      <Preference xmi:id="_0bPBF7HwEd-gJIGoZuZDPg" Name="numberingTextFormat" Value="{^}"/>
+      <Preference xmi:id="_0bPBGLHwEd-gJIGoZuZDPg" Name="showTerminalColumn" Value="false"/>
+      <Preference xmi:id="_0bPBGbHwEd-gJIGoZuZDPg" Name="hideProbabilities" Value="false"/>
+      <Preference xmi:id="_0bPBGrHwEd-gJIGoZuZDPg" Name="supressCloneCopy" Value="false"/>
+      <Preference xmi:id="_0bPBG7HwEd-gJIGoZuZDPg" Name="wrapBranchWidth" Value="0"/>
+      <Preference xmi:id="_0bPBHLHwEd-gJIGoZuZDPg" Name="skeletonTreeDisplay" Value="false"/>
+      <Preference xmi:id="_0bPBHbHwEd-gJIGoZuZDPg" Name="showNamedDistributions" Value="false"/>
+      <Preference xmi:id="_0bPBHrHwEd-gJIGoZuZDPg" Name="riskFunction" Value="vConstantRisk"/>
+      <Preference xmi:id="_0bPBH7HwEd-gJIGoZuZDPg" Name="constantRiskDefined" Value="false"/>
+      <Preference xmi:id="_0bPBILHwEd-gJIGoZuZDPg" Name="nonConstantRiskDefined" Value="false"/>
+      <Preference xmi:id="_0bPBIbHwEd-gJIGoZuZDPg" Name="constantRiskCoefficient" Value="0.0"/>
+      <Preference xmi:id="_0bPBIrHwEd-gJIGoZuZDPg" Name="LinearSegPoints" Value=""/>
+      <Preference xmi:id="_0bPBI7HwEd-gJIGoZuZDPg" Name="willingnessToPay" Value="0"/>
+      <Preference xmi:id="_0bPBJLHwEd-gJIGoZuZDPg" Name="maximumCost" Value="20000"/>
+      <Preference xmi:id="_0bPBJbHwEd-gJIGoZuZDPg" Name="minimumEffectiveness" Value="0.1"/>
+      <Preference xmi:id="_0bPBJrHwEd-gJIGoZuZDPg" Name="elimExtendedDominance" Value="false"/>
+      <Preference xmi:id="_0bPBJ7HwEd-gJIGoZuZDPg" Name="useMaximumCost" Value="false"/>
+      <Preference xmi:id="_0bPBKLHwEd-gJIGoZuZDPg" Name="useMinimumEffectiveness" Value="false"/>
+      <Preference xmi:id="_0bPBKbHwEd-gJIGoZuZDPg" Name="invertIncrementalEff" Value="false"/>
+      <Preference xmi:id="_0bPBKrHwEd-gJIGoZuZDPg" Name="average" Value="10"/>
+      <Preference xmi:id="_0bPBK7HwEd-gJIGoZuZDPg" Name="sens1WayVariable" Value=""/>
+      <Preference xmi:id="_0bPBLLHwEd-gJIGoZuZDPg" Name="sens2WayVariable1" Value=""/>
+      <Preference xmi:id="_0bPBLbHwEd-gJIGoZuZDPg" Name="sens2WayVariable2" Value=""/>
+      <Preference xmi:id="_0bPBLrHwEd-gJIGoZuZDPg" Name="sens3WayVariable1" Value=""/>
+      <Preference xmi:id="_0bPBL7HwEd-gJIGoZuZDPg" Name="sens3WayVariable2" Value=""/>
+      <Preference xmi:id="_0bPBMLHwEd-gJIGoZuZDPg" Name="sens3WayVariable3" Value=""/>
+      <Preference xmi:id="_0bPBMbHwEd-gJIGoZuZDPg" Name="monteNumSamples" Value="1000"/>
+      <Preference xmi:id="_0bPBMrHwEd-gJIGoZuZDPg" Name="monteNumTrials" Value="100"/>
+      <Preference xmi:id="_0bPBM7HwEd-gJIGoZuZDPg" Name="monteRunTrials" Value="true"/>
+      <Preference xmi:id="_0bPBNLHwEd-gJIGoZuZDPg" Name="monteSampleFlag" Value="vSampleAll"/>
+      <Preference xmi:id="_0bPBNbHwEd-gJIGoZuZDPg" Name="monteIdentifyingVrs" Value="[]"/>
+      <Preference xmi:id="_0bPBNrHwEd-gJIGoZuZDPg" Name="monteDownstreamMethod" Value="vIgnoreDecis"/>
+      <Preference xmi:id="_0bPBN7HwEd-gJIGoZuZDPg" Name="numberAllNodes" Value="false"/>
+      <Preference xmi:id="_0bPBOLHwEd-gJIGoZuZDPg" Name="tryAnalysisSuppressClone" Value="false"/>
+      <Preference xmi:id="_0bPBObHwEd-gJIGoZuZDPg" Name="anchorArrowEnd" Value="false"/>
+      <Preference xmi:id="_0bPBOrHwEd-gJIGoZuZDPg" Name="errorsWarningsAndNotes" Value="false"/>
+      <Preference xmi:id="_0bPBO7HwEd-gJIGoZuZDPg" Name="SavedAnalysisAbstractSummary" Value="false"/>
+      <Preference xmi:id="_0bPBPLHwEd-gJIGoZuZDPg" Name="textOnlyAnalysisOutputs" Value="false"/>
+      <Preference xmi:id="_0bPBPbHwEd-gJIGoZuZDPg" Name="internalCalculations" Value="false"/>
+      <Preference xmi:id="_0bPBPrHwEd-gJIGoZuZDPg" Name="highlightNodesBeingDebugged" Value="false"/>
+      <Preference xmi:id="_0bPBP7HwEd-gJIGoZuZDPg" Name="categoriesInTreeWindow" Value="true"/>
+      <Preference xmi:id="_0bPBQLHwEd-gJIGoZuZDPg" Name="categoriesInPropertiesGrid" Value="true"/>
+      <Preference xmi:id="_0bPBQbHwEd-gJIGoZuZDPg" Name="showTerminalColNote" Value="false"/>
+      <Preference xmi:id="_0bPBQrHwEd-gJIGoZuZDPg" Name="displayPathProbabilities" Value="false"/>
+      <Preference xmi:id="_0bPBQ7HwEd-gJIGoZuZDPg" Name="calculateExtraPayoffs" Value="false"/>
+      <Preference xmi:id="_0bPBRLHwEd-gJIGoZuZDPg" Name="seedRandomNumberGenerator" Value="false"/>
+      <Preference xmi:id="_0bPBRbHwEd-gJIGoZuZDPg" Name="generatorSeed" Value="0"/>
+      <Preference xmi:id="_0bPBRrHwEd-gJIGoZuZDPg" Name="seedingBehaviour" Value="vSeedDATA"/>
+      <Preference xmi:id="_0bPBR7HwEd-gJIGoZuZDPg" Name="setNumberOfThreads" Value="false"/>
+      <Preference xmi:id="_0bPBSLHwEd-gJIGoZuZDPg" Name="numberOfThreads" Value="1"/>
+      <Preference xmi:id="_0bPBSbHwEd-gJIGoZuZDPg" Name="evaluateTrackersFirstOrderOnly" Value="true"/>
+      <Preference xmi:id="_0bPBSrHwEd-gJIGoZuZDPg" Name="useCustomPayoffNames" Value="false"/>
+      <Preference xmi:id="_0bPBS7HwEd-gJIGoZuZDPg" Name="monteNumVOISamples" Value="100"/>
+      <Preference xmi:id="_0bPBTLHwEd-gJIGoZuZDPg" Name="monteRunParallelTrials" Value="0"/>
+      <Preference xmi:id="_0bPBTbHwEd-gJIGoZuZDPg" Name="monteNumSetsParallelTrials" Value="0"/>
+      <Preference xmi:id="_0bPBTrHwEd-gJIGoZuZDPg" Name="monteSumParallelTrials" Value="0"/>
+      <Preference xmi:id="_0bPBT7HwEd-gJIGoZuZDPg" Name="dynamicLinksGeneralFile" Value=""/>
+      <Preference xmi:id="_0bPBULHwEd-gJIGoZuZDPg" Name="dynamicLinksGeneralTopic" Value=""/>
+      <Preference xmi:id="_0bPBUbHwEd-gJIGoZuZDPg" Name="dynamicLinksGeneralForceCalc" Value=""/>
+      <Preference xmi:id="_0bPBUrHwEd-gJIGoZuZDPg" Name="dynamicLinksGeneralFlags" Value="0"/>
+      <Preference xmi:id="_0bPBU7HwEd-gJIGoZuZDPg" Name="Extra200xPreferences" Value="{zoomFact=1.0}"/>
+      <Preference xmi:id="_Oj3tgHxuEeKzvoemA_naNA" Name="locale" Value="en_US"/>
+      <Preference xmi:id="_Oj3tgXxuEeKzvoemA_naNA" Name="decimalSeparator" Value="."/>
+      <Preference xmi:id="_hrPPoH0hEeKkl92cA_2TBg" Name="currencySymbolLeft" Value="false"/>
+      <Preference xmi:id="_Oj3tg3xuEeKzvoemA_naNA" Name="thousandsSeparator" Value=","/>
+      <Preference xmi:id="_Oj4UkHxuEeKzvoemB-naNA" Name="currencySymbol" Value="$"/>
+    </PreferenceSet>
+  </tree:Tree>
+  <notation:Diagram xmi:id="_0bPBVLHwEd-gJIGoZuZDPg" type="TreeDocument" element="#_0bKIELHwEd-gJIGoZuZDPg" measurementUnit="Himetric">
+    <children xmi:id="_0bPBVbHwEd-gJIGoZuZDPg" type="TreeDocument_Tree">
+      <children xmi:id="_0bPBVrHwEd-gJIGoZuZDPg" type="DecisionNode" element="#_0bKIEbHwEd-gJIGoZuZDPg">
+        <children xmi:id="_0bPBV7HwEd-gJIGoZuZDPg" type="TreeNode_Label"/>
+        <children xmi:id="_0bPBWLHwEd-gJIGoZuZDPg" type="TreeNode_Probability"/>
+        <children xmi:id="_0bPBWbHwEd-gJIGoZuZDPg" type="TreeNode_Variables"/>
+        <children xmi:id="_0bPBWrHwEd-gJIGoZuZDPg" visible="false" type="TreeNode_Collapser"/>
+        <styles xsi:type="notation:ShapeStyle" xmi:id="_0bPBW7HwEd-gJIGoZuZDPg" lineColor="0"/>
+      </children>
+      <children xmi:id="_0bPBXLHwEd-gJIGoZuZDPg" type="ChanceNode" element="#_0bKIGbHwEd-gJIGoZuZDPg">
+        <children xmi:id="_0bPBXbHwEd-gJIGoZuZDPg" type="TreeNode_Label"/>
+        <children xmi:id="_0bPBXrHwEd-gJIGoZuZDPg" type="TreeNode_Probability"/>
+        <children xmi:id="_0bPBX7HwEd-gJIGoZuZDPg" type="TreeNode_Variables"/>
+        <children xmi:id="_0bPBYLHwEd-gJIGoZuZDPg" type="TreeNode_Collapser"/>
+        <styles xsi:type="notation:ShapeStyle" xmi:id="_0bPBYbHwEd-gJIGoZuZDPg" lineColor="0"/>
+      </children>
+      <children xmi:id="_0bPBYrHwEd-gJIGoZuZDPg" visible="false" type="TerminalNode" element="#_0bKIGrHwEd-gJIGoZuZDPg">
+        <children xmi:id="_0bPBY7HwEd-gJIGoZuZDPg" type="TreeNode_Label"/>
+        <children xmi:id="_0bPBZLHwEd-gJIGoZuZDPg" type="TreeNode_Probability"/>
+        <children xmi:id="_0bPBZbHwEd-gJIGoZuZDPg" type="TreeNode_Variables"/>
+        <children xmi:id="_0bPBZrHwEd-gJIGoZuZDPg" visible="false" type="TreeNode_Collapser"/>
+        <styles xsi:type="notation:ShapeStyle" xmi:id="_0bPBZ7HwEd-gJIGoZuZDPg" lineColor="0"/>
+      </children>
+      <children xmi:id="_0bPBaLHwEd-gJIGoZuZDPg" visible="false" type="TerminalNode" element="#_0bKIHrHwEd-gJIGoZuZDPg">
+        <children xmi:id="_0bPBabHwEd-gJIGoZuZDPg" type="TreeNode_Label"/>
+        <children xmi:id="_0bPBarHwEd-gJIGoZuZDPg" type="TreeNode_Probability"/>
+        <children xmi:id="_0bPBa7HwEd-gJIGoZuZDPg" type="TreeNode_Variables"/>
+        <children xmi:id="_0bPBbLHwEd-gJIGoZuZDPg" visible="false" type="TreeNode_Collapser"/>
+        <styles xsi:type="notation:ShapeStyle" xmi:id="_0bPBbbHwEd-gJIGoZuZDPg" lineColor="0"/>
+      </children>
+      <children xmi:id="_0bPBbrHwEd-gJIGoZuZDPg" type="ChanceNode" element="#_0bKIIrHwEd-gJIGoZuZDPg">
+        <children xmi:id="_0bPBb7HwEd-gJIGoZuZDPg" type="TreeNode_Label"/>
+        <children xmi:id="_0bPBcLHwEd-gJIGoZuZDPg" type="TreeNode_Probability"/>
+        <children xmi:id="_0bPBcbHwEd-gJIGoZuZDPg" type="TreeNode_Variables"/>
+        <children xmi:id="_0bPBcrHwEd-gJIGoZuZDPg" visible="false" type="TreeNode_Collapser"/>
+        <styles xsi:type="notation:ShapeStyle" xmi:id="_0bPBc7HwEd-gJIGoZuZDPg" lineColor="0"/>
+      </children>
+      <styles xsi:type="notation:ShapeStyle" xmi:id="_0bPBgLHwEd-gJIGoZuZDPg" lineColor="0"/>
+      <layoutConstraint xsi:type="notation:Bounds" xmi:id="_0bPBgbHwEd-gJIGoZuZDPg"/>
+    </children>
+    <children xmi:id="_0bPBgrHwEd-gJIGoZuZDPg" type="TreeExpectedValues">
+      <children xmi:id="_0bPBg7HwEd-gJIGoZuZDPg" type="ExpectedValue" element="#_0bPBVrHwEd-gJIGoZuZDPg">
+        <children xmi:id="_0bPBhLHwEd-gJIGoZuZDPg" type="Description"/>
+        <styles xsi:type="notation:ShapeStyle" xmi:id="_0bPBhbHwEd-gJIGoZuZDPg" lineColor="0"/>
+        <layoutConstraint xsi:type="notation:Bounds" xmi:id="_0bPBhrHwEd-gJIGoZuZDPg" x="120" y="-168"/>
+      </children>
+      <children xmi:id="_0bPBh7HwEd-gJIGoZuZDPg" type="ExpectedValue" element="#_0bPBXLHwEd-gJIGoZuZDPg">
+        <children xmi:id="_0bPBiLHwEd-gJIGoZuZDPg" type="Description"/>
+        <styles xsi:type="notation:ShapeStyle" xmi:id="_0bPBibHwEd-gJIGoZuZDPg" lineColor="0"/>
+        <layoutConstraint xsi:type="notation:Bounds" xmi:id="_0bPBirHwEd-gJIGoZuZDPg" x="120" y="-168"/>
+      </children>
+      <children xmi:id="_0bPBi7HwEd-gJIGoZuZDPg" type="ExpectedValue" element="#_0bPBYrHwEd-gJIGoZuZDPg">
+        <children xmi:id="_0bPBjLHwEd-gJIGoZuZDPg" type="Description"/>
+        <styles xsi:type="notation:ShapeStyle" xmi:id="_0bPBjbHwEd-gJIGoZuZDPg" lineColor="0"/>
+        <layoutConstraint xsi:type="notation:Bounds" xmi:id="_0bPBjrHwEd-gJIGoZuZDPg" x="120" y="-168"/>
+      </children>
+      <children xmi:id="_0bPBj7HwEd-gJIGoZuZDPg" type="ExpectedValue" element="#_0bPBaLHwEd-gJIGoZuZDPg">
+        <children xmi:id="_0bPBkLHwEd-gJIGoZuZDPg" type="Description"/>
+        <styles xsi:type="notation:ShapeStyle" xmi:id="_0bPBkbHwEd-gJIGoZuZDPg" lineColor="0"/>
+        <layoutConstraint xsi:type="notation:Bounds" xmi:id="_0bPBkrHwEd-gJIGoZuZDPg" x="120" y="-168"/>
+      </children>
+      <children xmi:id="_0bPBk7HwEd-gJIGoZuZDPg" type="ExpectedValue" element="#_0bPBbrHwEd-gJIGoZuZDPg">
+        <children xmi:id="_0bPBlLHwEd-gJIGoZuZDPg" type="Description"/>
+        <styles xsi:type="notation:ShapeStyle" xmi:id="_0bPBlbHwEd-gJIGoZuZDPg" lineColor="0"/>
+        <layoutConstraint xsi:type="notation:Bounds" xmi:id="_0bPBlrHwEd-gJIGoZuZDPg" x="120" y="-168"/>
+      </children>
+      <styles xsi:type="notation:ShapeStyle" xmi:id="_0bPBn7HwEd-gJIGoZuZDPg"/>
+      <element xsi:nil="true"/>
+      <layoutConstraint xsi:type="notation:Bounds" xmi:id="_0bPBoLHwEd-gJIGoZuZDPg"/>
+    </children>
+    <children xmi:id="_0bPBobHwEd-gJIGoZuZDPg" type="TreeTables">
+      <styles xsi:type="notation:ShapeStyle" xmi:id="_0bPBorHwEd-gJIGoZuZDPg"/>
+      <element xsi:nil="true"/>
+      <layoutConstraint xsi:type="notation:Bounds" xmi:id="_0bPBo7HwEd-gJIGoZuZDPg"/>
+    </children>
+    <children xmi:id="_0bPBpLHwEd-gJIGoZuZDPg" type="TreeDocument_Notes">
+      <element xsi:nil="true"/>
+    </children>
+    <styles xsi:type="notation:DiagramStyle" xmi:id="_0bPBpbHwEd-gJIGoZuZDPg">
+      <verticalGuides xmi:id="_0bPBprHwEd-gJIGoZuZDPg" position="173">
+        <nodeMap xmi:id="_0bPBp7HwEd-gJIGoZuZDPg" value="Right" key="#_0bPBVrHwEd-gJIGoZuZDPg"/>
+      </verticalGuides>
+      <verticalGuides xmi:id="_0bPBqLHwEd-gJIGoZuZDPg" position="346">
+        <nodeMap xmi:id="_0bPBqbHwEd-gJIGoZuZDPg" value="Right" key="#_0bPBXLHwEd-gJIGoZuZDPg"/>
+        <nodeMap xmi:id="_0bPBqrHwEd-gJIGoZuZDPg" value="Right" key="#_0bPBbrHwEd-gJIGoZuZDPg"/>
+      </verticalGuides>
+      <verticalGuides xmi:id="_0bPBq7HwEd-gJIGoZuZDPg" position="519">
+        <nodeMap xmi:id="_0bPBrLHwEd-gJIGoZuZDPg" value="Right" key="#_0bPBYrHwEd-gJIGoZuZDPg"/>
+        <nodeMap xmi:id="_0bPBrbHwEd-gJIGoZuZDPg" value="Right" key="#_0bPBaLHwEd-gJIGoZuZDPg"/>
+      </verticalGuides>
+    </styles>
+  </notation:Diagram>
+</xmi:XMI>

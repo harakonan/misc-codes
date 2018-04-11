@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:tree="http://www.treeage.com/modeldefs/tree">
+  <tree:Tree xmi:id="_GczEsKYdEeSCk43IA_9D4w">
+    <Node xmi:id="_GczEsaYdEeSCk43IA_9D4w" NameID="Node1" Label="Setup variable for profile number - use as row index for table lookups" NodeType="DecisionNode">
+      <MarkovData xmi:id="_GczEsqYdEeSCk43IA_9D4w">
+        <Modification xmi:id="_GczEs6YdEeSCk43IA_9D4w" Tracker="Trial2Gender" Value="Profile[Trial0Profile; 2]"/>
+      </MarkovData>
+      <Definition xmi:id="_GczEtKYdEeSCk43IA_9D4w" Variable="ProfileCount" Value="10"/>
+      <Node xmi:id="_GczEtaYdEeSCk43IB-9D4w" NameID="Node6" Label="Set tracker values based on data from table lookup" NodeType="LabelNode">
+        <MarkovData xmi:id="_GczEtqYdEeSCk43IB-9D4w">
+          <Modification xmi:id="_GczEt6YdEeSCk43IB-9D4w" Tracker="Trial2Gender" Value="Profile[Trial0Profile; 2]"/>
+          <Modification xmi:id="_GczEuKYdEeSCk43IB-9D4w" Tracker="Trial1StartAge" Value="Profile[Trial0Profile; 1]"/>
+        </MarkovData>
+        <Node xmi:id="_GczEuaYdEeSCk43IB-9D4w" NameID="Node3" Label="Simple test model to output the trial profile number" NodeType="TerminalNode">
+          <Payoff xmi:id="_GczEuqYdEeSCk43IC99D4w" Set="1" Value="Trial0Profile"/>
+        </Node>
+      </Node>
+    </Node>
+    <Distribution xmi:id="_GczEu6YdEeSCk43IC99D4w" NameID="Trial0Profile" Label="" Comment="" Index="1" SamplingRate="Sample1stOrderTrials" Type="Uniform">
+      <Parameter xmi:id="_GczEvKYdEeSCk43IC99D4w" Name="subtype" Value="1"/>
+      <Parameter xmi:id="_GczEvaYdEeSCk43IC99D4w" Name="low" Value="0"/>
+      <Parameter xmi:id="_GczrwKYdEeSCk43IC99D4w" Name="high" Value="10"/>
+    </Distribution>
+    <Variable xmi:id="_GczrwaYdEeSCk43ID89D4w" NameID="ProfileCount" Label="" Comment=""/>
+    <Tracker xmi:id="_GczrwqYdEeSCk43ID89D4w" NameID="Trial2Gender" Label="" Comment=""/>
+    <Tracker xmi:id="_Gczrw6YdEeSCk43ID89D4w" NameID="Trial1StartAge" Label="" Comment=""/>
+    <Table xmi:id="_GczrxKYdEeSCk43ID89D4w" NameID="Profile" Label="" Comment="" LookupMethod="RowColInterpolate" DataProvider="com.treeage.treeagepro.tables.sql.TableProvider" ColumnsCount="2">
+      <DataProviderOptions xmi:id="_GczrxaYdEeSCk43ID89D4w" key="null_values" value="error"/>
+      <DataProviderOptions xmi:id="_GczrxqYdEeSCk43IE79D4w" key="update" value="manually"/>
+      <DataProviderOptions xmi:id="_Gczrx6YdEeSCk43IE79D4w" key="idx" value="1.0"/>
+      <DataProviderOptions xmi:id="_GczryKYdEeSCk43IE79D4w" key="inc" value="1.0"/>
+      <DataProviderOptions xmi:id="_GczryaYdEeSCk43IE79D4w" key="gen_idx" value="false"/>
+      <DataProviderOptions xmi:id="_GczryqYdEeSCk43IE79D4w" key="query" value="select * from my_table_name"/>
+      <DataProviderOptions xmi:id="_Gczry6YdEeSCk43IF69D4w" key="substitute_expression" value=""/>
+      <DataProviderOptions xmi:id="_GczrzKYdEeSCk43IF69D4w" key="save_passsword" value="false"/>
+      <DataProviderOptions xmi:id="_GczrzaYdEeSCk43IF69D4w" key="warn_to_substituting" value="false"/>
+      <DataProviderOptions xmi:id="_GczrzqYdEeSCk43IF69D4w" key="user" value=""/>
+      <DataProviderOptions xmi:id="_Gczrz6YdEeSCk43IF69D4w" key="database" value=""/>
+      <DataProviderOptions xmi:id="_Gczr0KYdEeSCk43IG59D4w" key="datasource" value="sun.jdbc.odbc.JdbcOdbcDriver"/>
+      <Row xmi:id="_Gczr0aYdEeSCk43IG59D4w" Index="1.0" Values="40.0 1.0"/>
+      <Row xmi:id="_Gczr0qYdEeSCk43IG59D4w" Index="2.0" Values="35.0 2.0"/>
+      <Row xmi:id="_Gczr06YdEeSCk43IG59D4w" Index="3.0" Values="46.0 1.0"/>
+      <Row xmi:id="_Gczr1KYdEeSCk43IG59D4w" Index="4.0" Values="42.0 1.0"/>
+      <Row xmi:id="_Gczr1aYdEeSCk43IH49D4w" Index="5.0" Values="33.0 2.0"/>
+      <Row xmi:id="_Gczr1qYdEeSCk43IH49D4w" Index="6.0" Values="50.0 1.0"/>
+      <Row xmi:id="_Gczr16YdEeSCk43IH49D4w" Index="7.0" Values="30.0 2.0"/>
+      <Row xmi:id="_Gczr2KYdEeSCk43IH49D4w" Index="8.0" Values="39.0 2.0"/>
+      <Row xmi:id="_Gczr2aYdEeSCk43IH49D4w" Index="9.0" Values="44.0 2.0"/>
+      <Row xmi:id="_Gczr2qYdEeSCk43II39D4w" Index="10.0" Values="41.0 1.0"/>
+      <ColumnLabel>StartAge</ColumnLabel>
+      <ColumnLabel>Gender</ColumnLabel>
+      <ColumnLabel>Value 3</ColumnLabel>
+    </Table>
+    <CategoriesRoot xmi:id="_Gczr26YdEeSCk43II39D4w"/>
+    <PreferenceSet xmi:id="_Gczr3KYdEeSCk43II39D4w" NameID="Pref. set 1">
+      <Preference xmi:id="_Gczr3aYdEeSCk43II39D4w" Name="locale" Value="en_US"/>
+      <Preference xmi:id="_Gczr3qYdEeSCk43II39D4w" Name="useCustomRegionalNumericSettings" Value="false"/>
+      <Preference xmi:id="_Gczr36YdEeSCk43IJ29D4w" Name="monteNumVOISamples" Value="0"/>
+      <Preference xmi:id="_Gczr4KYdEeSCk43IJ29D4w" Name="monteNumSamples" Value="0"/>
+      <Preference xmi:id="_Gczr4aYdEeSCk43IJ29D4w" Name="monteNumTrials" Value="20"/>
+      <Preference xmi:id="_Gczr4qYdEeSCk43IJ29D4w" Name="monteRunParallelTrials" Value="false"/>
+      <Preference xmi:id="_Gczr46YdEeSCk43IJ29D4w" Name="decimalSeparator" Value="."/>
+      <Preference xmi:id="_Gczr5KYdEeSCk43IK19D4w" Name="currencySymbolLeft" Value="false"/>
+      <Preference xmi:id="_Gczr5aYdEeSCk43IK19D4w" Name="thousandsSeparator" Value=","/>
+      <Preference xmi:id="_Gczr5qYdEeSCk43IK19D4w" Name="currencySymbol" Value="$"/>
+    </PreferenceSet>
+  </tree:Tree>
+  <notation:Diagram xmi:id="_Gczr56YdEeSCk43IK19D4w" type="TreeDocument" element="#_GczEsKYdEeSCk43IA_9D4w" measurementUnit="Himetric">
+    <children xmi:id="_Gczr6KYdEeSCk43IK19D4w" type="TreeDocument_Tree">
+      <children xmi:id="_Gczr6aYdEeSCk43IL09D4w" type="DecisionNode" element="#_GczEsaYdEeSCk43IA_9D4w">
+        <children xmi:id="_Gczr6qYdEeSCk43IL09D4w" type="TreeNode_Label"/>
+        <children xmi:id="_Gczr66YdEeSCk43IL09D4w" type="TreeNode_Probability"/>
+        <children xmi:id="_Gczr7KYdEeSCk43IL09D4w" type="TreeNode_Variables"/>
+        <styles xsi:type="notation:ShapeStyle" xmi:id="_Gczr7aYdEeSCk43IL09D4w" fontName="Segoe UI" lineColor="0"/>
+      </children>
+      <children xmi:id="_Gczr7qYdEeSCk43IMz9D4w" type="TerminalNode" element="#_GczEuaYdEeSCk43IB-9D4w">
+        <children xmi:id="_Gczr76YdEeSCk43IMz9D4w" type="TreeNode_Label"/>
+        <children xmi:id="_Gczr8KYdEeSCk43IMz9D4w" type="TreeNode_Probability"/>
+        <children xmi:id="_Gczr8aYdEeSCk43IMz9D4w" type="TreeNode_Variables"/>
+        <styles xsi:type="notation:ShapeStyle" xmi:id="_Gczr8qYdEeSCk43IMz9D4w" fontName="Segoe UI" lineColor="0"/>
+      </children>
+      <children xmi:id="_Gczr86YdEeSCk43INy9D4w" type="LabelNode" element="#_GczEtaYdEeSCk43IB-9D4w">
+        <children xmi:id="_Gczr9KYdEeSCk43INy9D4w" type="TreeNode_Label"/>
+        <children xmi:id="_Gczr9aYdEeSCk43INy9D4w" type="TreeNode_Probability"/>
+        <children xmi:id="_Gczr9qYdEeSCk43INy9D4w" type="TreeNode_Variables"/>
+        <styles xsi:type="notation:ShapeStyle" xmi:id="_Gczr96YdEeSCk43INy9D4w" fontName="Segoe UI" lineColor="0"/>
+      </children>
+      <styles xsi:type="notation:ShapeStyle" xmi:id="_Gczr-KYdEeSCk43IOx9D4w" fontName="Segoe UI" lineColor="0"/>
+      <layoutConstraint xsi:type="notation:Bounds" xmi:id="_Gczr-aYdEeSCk43IOx9D4w"/>
+    </children>
+    <children xmi:id="_Gczr-qYdEeSCk43IOx9D4w" type="TreeExpectedValues">
+      <children xsi:type="notation:Shape" xmi:id="_Gc0S0KYdEeSCk43IOx9D4w" type="ExpectedValue" element="#_Gczr6aYdEeSCk43IL09D4w" fontName="Segoe UI" description="Text" lineColor="0">
+        <children xsi:type="notation:BasicDecorationNode" xmi:id="_Gc0S0aYdEeSCk43IOx9D4w" type="DiagramName"/>
+        <children xsi:type="notation:BasicDecorationNode" xmi:id="_Gc0S0qYdEeSCk43IPw9D4w" type="Description"/>
+        <layoutConstraint xsi:type="notation:Bounds" xmi:id="_Gc0S06YdEeSCk43IPw9D4w" x="132" y="-186"/>
+      </children>
+      <children xsi:type="notation:Shape" xmi:id="_Gc0S1KYdEeSCk43IPw9D4w" type="ExpectedValue" element="#_Gczr7qYdEeSCk43IMz9D4w" fontName="Segoe UI" description="Text" lineColor="0">
+        <children xsi:type="notation:BasicDecorationNode" xmi:id="_Gc0S1aYdEeSCk43IPw9D4w" type="DiagramName"/>
+        <children xsi:type="notation:BasicDecorationNode" xmi:id="_Gc0S1qYdEeSCk43IPw9D4w" type="Description"/>
+        <layoutConstraint xsi:type="notation:Bounds" xmi:id="_Gc0S16YdEeSCk43IQv9D4w" x="132" y="-186"/>
+      </children>
+      <children xsi:type="notation:Shape" xmi:id="_Gc0S2KYdEeSCk43IQv9D4w" type="ExpectedValue" element="#_Gczr86YdEeSCk43INy9D4w" fontName="Segoe UI" description="Text" lineColor="0">
+        <children xsi:type="notation:BasicDecorationNode" xmi:id="_Gc0S2aYdEeSCk43IQv9D4w" type="DiagramName"/>
+        <children xsi:type="notation:BasicDecorationNode" xmi:id="_Gc0S2qYdEeSCk43IQv9D4w" type="Description"/>
+        <layoutConstraint xsi:type="notation:Bounds" xmi:id="_Gc0S26YdEeSCk43IQv9D4w" x="132" y="-186"/>
+      </children>
+      <element xsi:nil="true"/>
+    </children>
+    <children xmi:id="_Gc0S3KYdEeSCk43IRu9D4w" type="TreeTables">
+      <element xsi:nil="true"/>
+    </children>
+    <children xmi:id="_Gc0S3aYdEeSCk43IRu9D4w" type="TreeDocument_Notes">
+      <children xsi:type="notation:Shape" xmi:id="_Gc0S3qYdEeSCk43IRu9D4w" type="Note" fontName="Segoe UI" description="Select the root decision node and run microsimulation. &#xD;&#xA;In the output, open the Texts Reports> Values, Dists and Trackers to see the different trial profiles.&#x9;" fillColor="13369343" transparency="0" lineColor="6737151" lineWidth="1">
+        <children xsi:type="notation:BasicDecorationNode" xmi:id="_Gc0S36YdEeSCk43IRu9D4w" type="DiagramName">
+          <element xsi:nil="true"/>
+        </children>
+        <children xsi:type="notation:BasicDecorationNode" xmi:id="_Gc0S4KYdEeSCk43IRu9D4w" type="Description">
+          <element xsi:nil="true"/>
+        </children>
+        <styles xsi:type="notation:TextStyle" xmi:id="_Gc0S4aYdEeSCk43ISt9D4w"/>
+        <styles xsi:type="notation:LineTypeStyle" xmi:id="_Gc0S4qYdEeSCk43ISt9D4w"/>
+        <element xsi:nil="true"/>
+        <layoutConstraint xsi:type="notation:Bounds" xmi:id="_Gc0S46YdEeSCk43ISt9D4w" x="369" y="4681" width="10768" height="2169"/>
+      </children>
+      <element xsi:nil="true"/>
+    </children>
+    <styles xsi:type="notation:DiagramStyle" xmi:id="_Gc0S5KYdEeSCk43ISt9D4w">
+      <verticalGuides xmi:id="_Gc0S5aYdEeSCk43ISt9D4w" position="232">
+        <nodeMap xmi:id="_Gc0S5qYdEeSCk43ITs9D4w" value="Right" key="#_Gczr6aYdEeSCk43IL09D4w"/>
+      </verticalGuides>
+      <verticalGuides xmi:id="_Gc0S56YdEeSCk43ITs9D4w" position="488">
+        <nodeMap xmi:id="_Gc0S6KYdEeSCk43ITs9D4w" value="Right" key="#_Gczr86YdEeSCk43INy9D4w"/>
+      </verticalGuides>
+      <verticalGuides xmi:id="_Gc0S6aYdEeSCk43ITs9D4w" position="652">
+        <nodeMap xmi:id="_Gc0S6qYdEeSCk43ITs9D4w" value="Right" key="#_Gczr7qYdEeSCk43IMz9D4w"/>
+      </verticalGuides>
+    </styles>
+  </notation:Diagram>
+</xmi:XMI>

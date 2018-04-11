@@ -1,0 +1,13 @@
+CREATE TABLE Badges
+(badge_nbr INTEGER NOT NULL PRIMARY KEY,
+ emp_id INTEGER NOT NULL,
+ issued_date DATE NOT NULL,
+ badge_status CHAR(1) NOT NULL
+    CHECK (badge_status IN ('A', 'I')));
+
+INSERT INTO Badges VALUES(100, 1, '2007-01-01', 'I');
+INSERT INTO Badges VALUES(200, 1, '2007-02-01', 'I');
+INSERT INTO Badges VALUES(300, 2, '2007-03-01', 'I');
+INSERT INTO Badges VALUES(400, 3, '2007-03-01', 'I');  
+INSERT INTO Badges VALUES(500, 3, '2007-04-01', 'I');  
+INSERT INTO Badges VALUES(600, 3, '2007-05-01', 'I');

@@ -1,0 +1,91 @@
+{smcl}
+{cmd:help myrereg}{...}
+{right:Example estimation command from the ML book, 4th ed.}
+{hline}
+
+{title:Title}
+
+{pstd}
+{hi:myrereg} {hline 2} The random-effects linear regression model
+
+
+{title:Syntax}
+
+{phang2}
+{cmd:myrereg}
+	{depvar} [{indepvars}]
+	{ifin} {weight},
+	{cmd:panel(}{varname}{cmd:)}
+	[{it:options}]
+
+
+{synoptset 26 tabbed}{...}
+{synopthdr}
+{synoptline}
+{syntab:Model}
+{p2coldent:* {opth panel(varname)}}panel ID variable{p_end}
+{synopt: {opth c:onstraints(estimation options##constraints():constraints)}}apply specified linear constraints{p_end}
+{synopt :{opt noc:onstant}}suppress constant term{p_end}
+{synopt: {cmd:nolrtest}}report the model Wald test{p_end}
+
+{syntab:Reporting}
+{synopt :{opt l:evel(#)}}set confidence level; default is {cmd:level(95)}{p_end}
+
+{syntab:Max options}
+{synopt :{it:{help maximize:maximize_options}}}control
+	the maximization process; seldom used{p_end}
+{synoptline}
+{phang}
+* {opt panel(varname)} is required.
+{p_end}
+{phang}
+{cmd:xi} is allowed; see {help prefix}.
+{p_end}
+{phang}
+{opt iweight}s are allowed;
+see {help weight}.  Note that weights must be constant within the panels.
+{p_end}
+
+
+{title:Description}
+
+{pstd}
+{cmd:myrereg} uses {cmd:ml} to fit a random-effects linear regression model.
+
+
+{title:Options}
+
+{dlgtab:Model}
+
+{phang}
+{cmd:panel(}{varname}{cmd:)} identifies the panels or groups.
+
+{phang}
+{opt constraints(constraints)},
+{opt noconstant};
+see {help estimation options}.
+
+{phang}
+{cmd:nolrtest} indicates that the model significance test should be a Wald
+test instead of a likelihood-ratio test.
+
+{dlgtab:Reporting}
+
+{phang}
+{opt level(#)}; see {help estimation options}.
+
+{dlgtab:Max options}
+
+{phang}
+{it:maximize_options}; {opt iter:ate(#)}, [{cmdab:no:}]{opt lo:g},
+{opt tr:ace}, {opt tol:erance(#)}, {opt ltol:erance(#)}; see {help maximize}.
+These options are seldom used.
+
+
+{title:Also see}
+
+{psee}
+Online:
+{helpb xtreg},
+{helpb constraint}
+{p_end}

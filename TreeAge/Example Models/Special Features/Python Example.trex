@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:tree="http://www.treeage.com/modeldefs/tree">
+  <tree:Tree xmi:id="_CzXecMv1Ed--e6bovnZvGA">
+    <Node xmi:id="_CzXeccv1Ed--e6bovnZvGA" NameID="Node1" Label="Test Python" NodeType="DecisionNode">
+      <Definition xmi:id="_CzXec8v1Ed--e6bovnZvGA" Variable="myVar1" Value="5"/>
+      <Definition xmi:id="_CzXedMv1Ed--e6bovnZvGA" Variable="myVar2" Value="3"/>
+      <Definition xmi:id="_7d2-kMv2Ed--e6bovnZvGA" Variable="PythonFunctionExponent" Value="def PythonFunctionExponent(inVal, inPower):&#xD;&#xA;  return inVal**inPower;"/>
+      <Definition xmi:id="_95bpIMv2Ed--e6bovnZvGA" Variable="PythonFunctionExponentFixed" Value="def PythonFunctionExponentFixed():&#xD;&#xA;  return 4**3;" Comment=""/>
+      <Definition xmi:id="_B5tnsMv3Ed--e6bovnZvGA" Variable="PythonFunctionGetVars" Value="def PythonFunctionGetVars():&#xD;&#xA;&#xD;&#xA;  treeage.debug(&quot;PythonFunctionGetVars&quot;,&quot;Start function&quot;)&#xD;&#xA;&#xD;&#xA;  var1 = treeage.eval(&quot;myVar1&quot;);&#xD;&#xA;  var2 = treeage.eval(&quot;myVar2&quot;);&#xD;&#xA;&#xD;&#xA;  treeage.debug(&quot;var1&quot;,str(var1));&#xD;&#xA;  treeage.debug(&quot;var2&quot;,str(var2));&#xD;&#xA;  treeage.debug(&quot; var1**var2&quot;,str( var1**var2));&#xD;&#xA;&#xD;&#xA;  treeage.debug(&quot;PythonFunctionGetVars&quot;,&quot;End of function, return value&quot;)&#xD;&#xA;&#xD;&#xA;  return var1**var2;"/>
+      <Definition xmi:id="_y_bqoMv_Ed-XwYCis-8-uQ" Variable="DiscVal" Value="def DiscVal(val,yrs,rate=.05):&#xD;&#xA;  denom = (1+rate)**yrs;&#xD;&#xA;  return val/denom;"/>
+      <Definition xmi:id="_F-c68M56EeWx7-9KA_1klw" Variable="PythonFunction_Math_sqrt" Value="def PythonFunction_Math_sqrt():&#xD;&#xA;&#xD;&#xA;  from math import sqrt;&#xD;&#xA;  return sqrt( 64 );" Comment=""/>
+      <Node xmi:id="_CzXeeMv1Ed--e6bovnZvGA" NameID="Node3" Label="Python 2, 3" NodeType="TerminalNode">
+        <Payoff xmi:id="_CzXeecv1Ed--e6bovnZvGA" Set="1" Value="User(&quot;PythonFunctionExponent&quot;; 2; 3)"/>
+      </Node>
+      <Node xmi:id="_CzXeesv1Ed--e6bovnZvGA" NameID="Node4" Label="Python 3, 2" NodeType="TerminalNode">
+        <Payoff xmi:id="_CzXee8v1Ed--e6bovnZvGA" Set="1" Value="User(&quot;PythonFunctionExponent&quot;; 3; 2)"/>
+      </Node>
+      <Node xmi:id="_CzXefMv1Ed--e6bovnZvGA" NameID="Node5" Label="Python fixed direct call&#xD;&#xA;- Fails" NodeType="TerminalNode">
+        <Payoff xmi:id="_CzXefcv1Ed--e6bovnZvGA" Set="1" Value="PythonFunctionExponentFixed"/>
+      </Node>
+      <Node xmi:id="_CzXefsv1Ed--e6bovnZvGA" NameID="Node6" Label="Python fixed via User call" NodeType="TerminalNode">
+        <Payoff xmi:id="_CzXef8v1Ed--e6bovnZvGA" Set="1" Value="User(&quot;PythonFunctionExponentFixed&quot;)"/>
+      </Node>
+      <Node xmi:id="_CzXegMv1Ed--e6bovnZvGA" NameID="Node7" Label="Python get vars" NodeType="TerminalNode">
+        <Payoff xmi:id="_CzXegcv1Ed--e6bovnZvGA" Set="1" Value="User(&quot;PythonFunctionGetVars&quot;)"/>
+      </Node>
+      <Node xmi:id="_CzXegsv1Ed--e6bovnZvGA" NameID="Node8" Label="Python DiscVal" NodeType="TerminalNode">
+        <Payoff xmi:id="_CzXeg8v1Ed--e6bovnZvGA" Set="1" Value="User(&quot;DiscVal&quot;; 1000; 2; 0.04)"/>
+      </Node>
+      <Node xmi:id="_CzXehMv1Ed--e6bovnZvGA" NameID="Node9" Label="Discount Function to&#xD;&#xA;verify Python DiscVal" NodeType="TerminalNode">
+        <Payoff xmi:id="_CzXehcv1Ed--e6bovnZvGA" Set="1" Value="Discount(1000; 0.04; 2)"/>
+      </Node>
+      <Node xmi:id="__f_h0Mv3Ed--e6bovnZvGA" NameID="Node10" Label="Alternate Python syntax 1" NodeType="TerminalNode">
+        <Definition xmi:id="_M58lgMv4Ed--e6bovnZvGA" Variable="valFromPython" Value="Python(&quot;2**3&quot;)"/>
+        <Payoff xmi:id="_ftpVEcv4Ed-XwYCis-8-uQ" Set="1" Value="valFromPython"/>
+      </Node>
+      <Node xmi:id="_KAvrsM56EeWx7-9KA_1klw" NameID="Node11" Label="Import Python math library" NodeType="TerminalNode">
+        <Payoff xmi:id="_K8sWkM56EeWx7-9KC91klw" Set="1" Value="PythonFunction_Math_sqrt"/>
+      </Node>
+    </Node>
+    <Variable xmi:id="_CzXehsv1Ed--e6bovnZvGA" NameID="PythonFunctionExponent" Label="Python function to cube an input variable" Comment=""/>
+    <Variable xmi:id="_CzXeh8v1Ed--e6bovnZvGA" NameID="PythonFunctionExponentFixed" Label="Python function with no arguments" Comment=""/>
+    <Variable xmi:id="_CzXeiMv1Ed--e6bovnZvGA" NameID="PythonFunctionGetVars" Label="Python use treeage object to get variable values in function" Comment=""/>
+    <Variable xmi:id="_CzXeicv1Ed--e6bovnZvGA" NameID="myVar1" Label="" Comment=""/>
+    <Variable xmi:id="_CzXeisv1Ed--e6bovnZvGA" NameID="myVar2" Label="" Comment=""/>
+    <Variable xmi:id="_CzXei8v1Ed--e6bovnZvGA" NameID="DiscVal" Label="Discount a value by rate, periods" Comment=""/>
+    <Variable xmi:id="_MXA3kMv4Ed--e6bovnZvGA" NameID="valFromPython" Label="" Comment=""/>
+    <Variable xmi:id="_F-aesM56EeWx7-9KA_1klw" NameID="PythonFunction_Math_sqrt" Label="Python using sqrt function from math library" Comment=""/>
+    <CategoriesRoot xmi:id="_CzXejMv1Ed--e6bovnZvGA"/>
+    <PreferenceSet xmi:id="_CzXejcv1Ed--e6bovnZvGA" NameID="default">
+      <Preference xmi:id="_CzXejsv1Ed--e6bovnZvGA" Name="internalCalculations" Value="true"/>
+      <Preference xmi:id="_CzXej8v1Ed--e6bovnZvGA" Name="clearDebugOutputLines" Value="10000"/>
+      <Preference xmi:id="_CzXekMv1Ed--e6bovnZvGA" Name="errorsWarningsAndNotes" Value="true"/>
+      <Preference xmi:id="_CzXekcv1Ed--e6bovnZvGA" Name="textOnlyAnalysisOutputs" Value="true"/>
+      <Preference xmi:id="_CzXeksv1Ed--e6bovnZvGA" Name="SavedAnalysisAbstractSummary" Value="true"/>
+      <Preference xmi:id="_p3aEQMwBEd-XwYCis-8-uQ" Name="terminalColNote" Value=""/>
+      <Preference xmi:id="_p3aEQcwBEd-XwYCis-8-uQ" Name="automaticNodeNumbering" Value="true"/>
+      <Preference xmi:id="_p3aEQswBEd-XwYCis-8-uQ" Name="numberingTextFormat" Value="{^}"/>
+      <Preference xmi:id="_K8sWkc56EeWx7-9KC91klw" Name="useCustomPayoffNames" Value="false"/>
+      <Preference xmi:id="_K8sWks56EeWx7-9KD81klw" Name="numberOfEnabledPayoffs" Value="1"/>
+    </PreferenceSet>
+  </tree:Tree>
+  <notation:Diagram xmi:id="_CzXek8v1Ed--e6bovnZvGA" type="TreeDocument" element="#_CzXecMv1Ed--e6bovnZvGA" measurementUnit="Himetric">
+    <children xmi:id="_CzXelMv1Ed--e6bovnZvGA" type="TreeDocument_Tree">
+      <children xmi:id="_CzXelcv1Ed--e6bovnZvGA" type="DecisionNode" element="#_CzXeccv1Ed--e6bovnZvGA">
+        <children xmi:id="_CzXelsv1Ed--e6bovnZvGA" type="TreeNode_Label"/>
+        <children xmi:id="_CzXel8v1Ed--e6bovnZvGA" type="TreeNode_Probability"/>
+        <children xmi:id="_CzXemMv1Ed--e6bovnZvGA" type="TreeNode_Variables"/>
+        <styles xsi:type="notation:ShapeStyle" xmi:id="_CzXemcv1Ed--e6bovnZvGA" fontName="Segoe UI" lineColor="0"/>
+      </children>
+      <children xmi:id="_CzXemsv1Ed--e6bovnZvGA" type="TerminalNode" element="#_CzXeeMv1Ed--e6bovnZvGA">
+        <children xmi:id="_CzXem8v1Ed--e6bovnZvGA" type="TreeNode_Label"/>
+        <children xmi:id="_CzXenMv1Ed--e6bovnZvGA" type="TreeNode_Probability"/>
+        <children xmi:id="_CzXencv1Ed--e6bovnZvGA" type="TreeNode_Variables"/>
+        <styles xsi:type="notation:ShapeStyle" xmi:id="_CzXensv1Ed--e6bovnZvGA" fontName="Segoe UI" lineColor="0"/>
+      </children>
+      <children xmi:id="_CzXen8v1Ed--e6bovnZvGA" type="TerminalNode" element="#_CzXeesv1Ed--e6bovnZvGA">
+        <children xmi:id="_CzXeoMv1Ed--e6bovnZvGA" type="TreeNode_Label"/>
+        <children xmi:id="_CzXeocv1Ed--e6bovnZvGA" type="TreeNode_Probability"/>
+        <children xmi:id="_CzXeosv1Ed--e6bovnZvGA" type="TreeNode_Variables"/>
+        <styles xsi:type="notation:ShapeStyle" xmi:id="_CzXeo8v1Ed--e6bovnZvGA" fontName="Segoe UI" lineColor="0"/>
+      </children>
+      <children xmi:id="_CzXepMv1Ed--e6bovnZvGA" type="TerminalNode" element="#_CzXefMv1Ed--e6bovnZvGA">
+        <children xmi:id="_CzXepcv1Ed--e6bovnZvGA" type="TreeNode_Label"/>
+        <children xmi:id="_CzXepsv1Ed--e6bovnZvGA" type="TreeNode_Probability"/>
+        <children xmi:id="_CzXep8v1Ed--e6bovnZvGA" type="TreeNode_Variables"/>
+        <styles xsi:type="notation:ShapeStyle" xmi:id="_CzXeqMv1Ed--e6bovnZvGA" fontName="Segoe UI" lineColor="0"/>
+      </children>
+      <children xmi:id="_CzXeqcv1Ed--e6bovnZvGA" type="TerminalNode" element="#_CzXefsv1Ed--e6bovnZvGA">
+        <children xmi:id="_CzXeqsv1Ed--e6bovnZvGA" type="TreeNode_Label"/>
+        <children xmi:id="_CzXeq8v1Ed--e6bovnZvGA" type="TreeNode_Probability"/>
+        <children xmi:id="_CzXerMv1Ed--e6bovnZvGA" type="TreeNode_Variables"/>
+        <styles xsi:type="notation:ShapeStyle" xmi:id="_CzXercv1Ed--e6bovnZvGA" fontName="Segoe UI" lineColor="0"/>
+      </children>
+      <children xmi:id="_CzXersv1Ed--e6bovnZvGA" type="TerminalNode" element="#_CzXegMv1Ed--e6bovnZvGA">
+        <children xmi:id="_CzXer8v1Ed--e6bovnZvGA" type="TreeNode_Label"/>
+        <children xmi:id="_CzXesMv1Ed--e6bovnZvGA" type="TreeNode_Probability"/>
+        <children xmi:id="_CzXescv1Ed--e6bovnZvGA" type="TreeNode_Variables"/>
+        <styles xsi:type="notation:ShapeStyle" xmi:id="_CzXessv1Ed--e6bovnZvGA" fontName="Segoe UI" lineColor="0"/>
+      </children>
+      <children xmi:id="_CzXes8v1Ed--e6bovnZvGA" type="TerminalNode" element="#_CzXegsv1Ed--e6bovnZvGA">
+        <children xmi:id="_CzXetMv1Ed--e6bovnZvGA" type="TreeNode_Label"/>
+        <children xmi:id="_CzXetcv1Ed--e6bovnZvGA" type="TreeNode_Probability"/>
+        <children xmi:id="_CzXetsv1Ed--e6bovnZvGA" type="TreeNode_Variables"/>
+        <styles xsi:type="notation:ShapeStyle" xmi:id="_CzXet8v1Ed--e6bovnZvGA" fontName="Segoe UI" lineColor="0"/>
+      </children>
+      <children xmi:id="_CzXeuMv1Ed--e6bovnZvGA" type="TerminalNode" element="#_CzXehMv1Ed--e6bovnZvGA">
+        <children xmi:id="_CzXeucv1Ed--e6bovnZvGA" type="TreeNode_Label"/>
+        <children xmi:id="_CzXeusv1Ed--e6bovnZvGA" type="TreeNode_Probability"/>
+        <children xmi:id="_CzXeu8v1Ed--e6bovnZvGA" type="TreeNode_Variables"/>
+        <styles xsi:type="notation:ShapeStyle" xmi:id="_CzXevMv1Ed--e6bovnZvGA" fontName="Segoe UI" lineColor="0"/>
+      </children>
+      <children xmi:id="__gcNwMv3Ed--e6bovnZvGA" type="TerminalNode" element="#__f_h0Mv3Ed--e6bovnZvGA">
+        <children xmi:id="__glXsMv3Ed--e6bovnZvGA" type="TreeNode_Label"/>
+        <children xmi:id="__glXscv3Ed--e6bovnZvGA" type="TreeNode_Probability"/>
+        <children xmi:id="__glXssv3Ed--e6bovnZvGA" type="TreeNode_Variables"/>
+        <styles xsi:type="notation:ShapeStyle" xmi:id="__gcNwcv3Ed--e6bovnZvGA" fontName="Segoe UI" lineColor="0"/>
+      </children>
+      <children xmi:id="_KA6DwM56EeWx7-9KA_1klw" type="TerminalNode" element="#_KAvrsM56EeWx7-9KA_1klw">
+        <children xmi:id="_KA7R4M56EeWx7-9KB-1klw" type="TreeNode_Label"/>
+        <children xmi:id="_KA7R4c56EeWx7-9KB-1klw" type="TreeNode_Probability"/>
+        <children xmi:id="_KA7R4s56EeWx7-9KB-1klw" type="TreeNode_Variables"/>
+        <styles xsi:type="notation:ShapeStyle" xmi:id="_KA6Dwc56EeWx7-9KA_1klw" fontName="Segoe UI" lineColor="0"/>
+      </children>
+      <styles xsi:type="notation:ShapeStyle" xmi:id="_CzXevcv1Ed--e6bovnZvGA" fontName="Segoe UI" fillColor="0" lineColor="0"/>
+      <layoutConstraint xsi:type="notation:Bounds" xmi:id="_CzXevsv1Ed--e6bovnZvGA"/>
+    </children>
+    <children xmi:id="_CzXev8v1Ed--e6bovnZvGA" type="TreeExpectedValues">
+      <children xsi:type="notation:Shape" xmi:id="_CzXewMv1Ed--e6bovnZvGA" type="ExpectedValue" element="#_CzXelcv1Ed--e6bovnZvGA" fontName="Segoe UI" lineColor="0">
+        <children xsi:type="notation:BasicDecorationNode" xmi:id="_CzXewcv1Ed--e6bovnZvGA" type="DiagramName"/>
+        <children xsi:type="notation:BasicDecorationNode" xmi:id="_CzXewsv1Ed--e6bovnZvGA" type="Description"/>
+        <layoutConstraint xsi:type="notation:Bounds" xmi:id="_CzXew8v1Ed--e6bovnZvGA" x="132" y="-186"/>
+      </children>
+      <children xsi:type="notation:Shape" xmi:id="_CzXexMv1Ed--e6bovnZvGA" type="ExpectedValue" element="#_CzXemsv1Ed--e6bovnZvGA" fontName="Segoe UI" lineColor="0">
+        <children xsi:type="notation:BasicDecorationNode" xmi:id="_CzXexcv1Ed--e6bovnZvGA" type="DiagramName"/>
+        <children xsi:type="notation:BasicDecorationNode" xmi:id="_CzXexsv1Ed--e6bovnZvGA" type="Description"/>
+        <layoutConstraint xsi:type="notation:Bounds" xmi:id="_CzXex8v1Ed--e6bovnZvGA" x="132" y="-186"/>
+      </children>
+      <children xsi:type="notation:Shape" xmi:id="_CzXeyMv1Ed--e6bovnZvGA" type="ExpectedValue" element="#_CzXen8v1Ed--e6bovnZvGA" fontName="Segoe UI" lineColor="0">
+        <children xsi:type="notation:BasicDecorationNode" xmi:id="_CzXeycv1Ed--e6bovnZvGA" type="DiagramName"/>
+        <children xsi:type="notation:BasicDecorationNode" xmi:id="_CzXeysv1Ed--e6bovnZvGA" type="Description"/>
+        <layoutConstraint xsi:type="notation:Bounds" xmi:id="_CzXey8v1Ed--e6bovnZvGA" x="133" y="-186"/>
+      </children>
+      <children xsi:type="notation:Shape" xmi:id="_CzXezMv1Ed--e6bovnZvGA" type="ExpectedValue" element="#_CzXepMv1Ed--e6bovnZvGA" fontName="Segoe UI" lineColor="0">
+        <children xsi:type="notation:BasicDecorationNode" xmi:id="_CzXezcv1Ed--e6bovnZvGA" type="DiagramName"/>
+        <children xsi:type="notation:BasicDecorationNode" xmi:id="_CzXezsv1Ed--e6bovnZvGA" type="Description"/>
+        <layoutConstraint xsi:type="notation:Bounds" xmi:id="_CzXez8v1Ed--e6bovnZvGA" x="132" y="-186"/>
+      </children>
+      <children xsi:type="notation:Shape" xmi:id="_CzXe0Mv1Ed--e6bovnZvGA" type="ExpectedValue" element="#_CzXeqcv1Ed--e6bovnZvGA" fontName="Segoe UI" lineColor="0">
+        <children xsi:type="notation:BasicDecorationNode" xmi:id="_CzXe0cv1Ed--e6bovnZvGA" type="DiagramName"/>
+        <children xsi:type="notation:BasicDecorationNode" xmi:id="_CzXe0sv1Ed--e6bovnZvGA" type="Description"/>
+        <layoutConstraint xsi:type="notation:Bounds" xmi:id="_CzXe08v1Ed--e6bovnZvGA" x="133" y="-186"/>
+      </children>
+      <children xsi:type="notation:Shape" xmi:id="_CzXe1Mv1Ed--e6bovnZvGA" type="ExpectedValue" element="#_CzXersv1Ed--e6bovnZvGA" fontName="Segoe UI" lineColor="0">
+        <children xsi:type="notation:BasicDecorationNode" xmi:id="_CzXe1cv1Ed--e6bovnZvGA" type="DiagramName"/>
+        <children xsi:type="notation:BasicDecorationNode" xmi:id="_CzXe1sv1Ed--e6bovnZvGA" type="Description"/>
+        <layoutConstraint xsi:type="notation:Bounds" xmi:id="_CzXe18v1Ed--e6bovnZvGA" x="133" y="-185"/>
+      </children>
+      <children xsi:type="notation:Shape" xmi:id="_CzXe2Mv1Ed--e6bovnZvGA" type="ExpectedValue" element="#_CzXes8v1Ed--e6bovnZvGA" fontName="Segoe UI" lineColor="0">
+        <children xsi:type="notation:BasicDecorationNode" xmi:id="_CzXe2cv1Ed--e6bovnZvGA" type="DiagramName"/>
+        <children xsi:type="notation:BasicDecorationNode" xmi:id="_CzXe2sv1Ed--e6bovnZvGA" type="Description"/>
+        <layoutConstraint xsi:type="notation:Bounds" xmi:id="_CzXe28v1Ed--e6bovnZvGA" x="133" y="-185"/>
+      </children>
+      <children xsi:type="notation:Shape" xmi:id="_CzXe3Mv1Ed--e6bovnZvGA" type="ExpectedValue" element="#_CzXeuMv1Ed--e6bovnZvGA" fontName="Segoe UI" lineColor="0">
+        <children xsi:type="notation:BasicDecorationNode" xmi:id="_CzXe3cv1Ed--e6bovnZvGA" type="DiagramName"/>
+        <children xsi:type="notation:BasicDecorationNode" xmi:id="_CzXe3sv1Ed--e6bovnZvGA" type="Description"/>
+        <layoutConstraint xsi:type="notation:Bounds" xmi:id="_CzXe38v1Ed--e6bovnZvGA" x="132" y="-186"/>
+      </children>
+      <children xsi:type="notation:Shape" xmi:id="__hCDocv3Ed--e6bovnZvGA" type="ExpectedValue" element="#__gcNwMv3Ed--e6bovnZvGA" fontName="Segoe UI" lineColor="0">
+        <children xsi:type="notation:BasicDecorationNode" xmi:id="__hCDo8v3Ed--e6bovnZvGA" type="DiagramName"/>
+        <children xsi:type="notation:BasicDecorationNode" xmi:id="__hCDpMv3Ed--e6bovnZvGA" type="Description"/>
+        <layoutConstraint xsi:type="notation:Bounds" xmi:id="__hCDosv3Ed--e6bovnZvGA" x="132" y="-186"/>
+      </children>
+      <children xsi:type="notation:Shape" xmi:id="_KBiV4M56EeWx7-9KB-1klw" type="ExpectedValue" element="#_KA6DwM56EeWx7-9KA_1klw" fontName="Segoe UI" description="Text" lineColor="0">
+        <children xsi:type="notation:BasicDecorationNode" xmi:id="_KBi88M56EeWx7-9KC91klw" type="DiagramName"/>
+        <children xsi:type="notation:BasicDecorationNode" xmi:id="_KBi88c56EeWx7-9KC91klw" type="Description"/>
+        <layoutConstraint xsi:type="notation:Bounds" xmi:id="_KBiV4c56EeWx7-9KC91klw" x="132" y="-186"/>
+      </children>
+      <element xsi:nil="true"/>
+    </children>
+    <children xmi:id="_CzXe4Mv1Ed--e6bovnZvGA" type="TreeTables">
+      <element xsi:nil="true"/>
+    </children>
+    <children xmi:id="_CzXe4cv1Ed--e6bovnZvGA" type="TreeDocument_Notes">
+      <element xsi:nil="true"/>
+    </children>
+    <styles xsi:type="notation:DiagramStyle" xmi:id="_CzXe4sv1Ed--e6bovnZvGA">
+      <verticalGuides xmi:id="_CzXe48v1Ed--e6bovnZvGA" position="431">
+        <nodeMap xmi:id="_CzXe5Mv1Ed--e6bovnZvGA" value="Right" key="#_CzXelcv1Ed--e6bovnZvGA"/>
+      </verticalGuides>
+      <verticalGuides xmi:id="_CzXe5cv1Ed--e6bovnZvGA" position="604">
+        <nodeMap xmi:id="_CzXe5sv1Ed--e6bovnZvGA" value="Right" key="#_CzXemsv1Ed--e6bovnZvGA"/>
+        <nodeMap xmi:id="_CzXe58v1Ed--e6bovnZvGA" value="Right" key="#_CzXen8v1Ed--e6bovnZvGA"/>
+        <nodeMap xmi:id="_CzXe6Mv1Ed--e6bovnZvGA" value="Right" key="#_CzXepMv1Ed--e6bovnZvGA"/>
+        <nodeMap xmi:id="_CzXe6cv1Ed--e6bovnZvGA" value="Right" key="#_CzXeqcv1Ed--e6bovnZvGA"/>
+        <nodeMap xmi:id="_CzXe6sv1Ed--e6bovnZvGA" value="Right" key="#_CzXersv1Ed--e6bovnZvGA"/>
+        <nodeMap xmi:id="_CzXe68v1Ed--e6bovnZvGA" value="Right" key="#_CzXes8v1Ed--e6bovnZvGA"/>
+        <nodeMap xmi:id="_CzXe7Mv1Ed--e6bovnZvGA" value="Right" key="#_CzXeuMv1Ed--e6bovnZvGA"/>
+        <nodeMap xmi:id="__hCDoMv3Ed--e6bovnZvGA" value="Right" key="#__gcNwMv3Ed--e6bovnZvGA"/>
+        <nodeMap xmi:id="_KBcPQM56EeWx7-9KB-1klw" value="Right" key="#_KA6DwM56EeWx7-9KA_1klw"/>
+      </verticalGuides>
+    </styles>
+  </notation:Diagram>
+</xmi:XMI>

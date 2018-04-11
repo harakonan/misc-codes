@@ -1,0 +1,5 @@
+﻿print(10)
+print("\n")
+print(10.class())
+print("\n")
+print(3.14.class())

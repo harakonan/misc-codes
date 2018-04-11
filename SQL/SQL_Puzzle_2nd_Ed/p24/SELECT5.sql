@@ -1,0 +1,4 @@
+SELECT *
+  FROM MyTable
+ WHERE COALESCE (NULLIF (f1, 0), NULLIF (f2, 0), NULLIF (f3, 0), NULLIF (f4, 0), NULLIF (f5, 0), NULLIF (f6, 0), NULLIF (f7, 0), NULLIF (f8, 0), NULLIF (f9, 0), NULLIF (f10, 0))
+       IS NOT NULL;

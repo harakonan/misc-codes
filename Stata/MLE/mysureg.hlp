@@ -1,0 +1,110 @@
+{smcl}
+{cmd:help mysureg}{...}
+{right:Example estimation command from the ML book, 4th ed.}
+{hline}
+
+{title:Title}
+
+{pstd}
+{hi:mysureg} {hline 2} The seemingly unrelated regression model
+
+
+{title:Syntax}
+
+{phang2}
+{cmd:mysureg}
+	{cmd:(}{depvar:1} {indepvars:1} [{cmd:,} {opt nocons:tant}]{cmd:)}
+	[{cmd:(}{depvar:2} {indepvars:2} [{cmd:,} {opt nocons:tant}]{cmd:)} ...]
+	{ifin} {weight}
+	[{cmd:,} {it:options}]
+
+{synoptset 26 tabbed}{...}
+{synopthdr}
+{synoptline}
+{syntab:Model}
+{synopt: {opth c:onstraints(estimation options##constraints():constraints)}}apply specified linear constraints{p_end}
+{synopt: {cmd:nolrtest}}report the model Wald test{p_end}
+
+{syntab:Reporting}
+{synopt :{opt l:evel(#)}}set confidence level; default is {cmd:level(95)}{p_end}
+{synopt: {opt notable}}suppress table of results{p_end}
+{synopt :{opt corr}}display residual correlation matrix{p_end}
+
+{syntab:SE/Robust}
+{synopt :{opth vce(vcetype)}}{it:vcetype}
+	may be {opt oim}, {opt r:obust}, or {opt opg}{p_end}
+{synopt :{opth cl:uster(varname)}}adjust
+	standard errors for intragroup correlation; implies {cmd:vce(robust)}{p_end}
+
+{syntab:Max options}
+{synopt :{it:{help maximize:maximize_options}}}control
+	the maximization process; seldom used{p_end}
+{synoptline}
+{phang}
+{cmd:bootstrap},
+{cmd:jackknife},
+{cmd:statsby},
+{cmd:stepwise},
+{cmd:svy}, and
+{cmd:xi} are allowed; see {help prefix}.
+{p_end}
+{phang}
+{opt fweight}s, {opt iweight}s, and {opt pweight}s are allowed;
+see {help weight}.
+{p_end}
+
+
+{title:Description}
+
+{pstd}
+{cmd:mysureg} uses {cmd:ml} to fit a seemingly unrelated regression model.
+
+
+{title:Options}
+
+{dlgtab:Model}
+
+{phang}
+{opt constraints(constraints)},
+{opt noconstant};
+see {help estimation options}.
+
+{phang}
+{cmd:nolrtest} indicates that the model significance test should be a Wald
+test instead of a likelihood-ratio test.
+
+{dlgtab:Reporting}
+
+{phang}
+{opt level(#)}; see {help estimation options}.
+
+{phang}
+{cmd:notable} suppresses the table of estimation results from being displayed.
+
+{phang}
+{cmd:corr} displays the correlation matrix of the residuals between
+equations.
+
+{dlgtab:SE/Robust}
+
+{phang}
+{opt vce(vcetype)}; see {it:{help vce_option}}.
+
+{phang}
+{opth cluster(varname)}; see {help estimation options}.
+
+{dlgtab:Max options}
+
+{phang}
+{it:maximize_options}; {opt iter:ate(#)}, [{cmdab:no:}]{opt lo:g},
+{opt tr:ace}, {opt tol:erance(#)}, {opt ltol:erance(#)}; see {help maximize}.
+These options are seldom used.
+
+
+{title:Also see}
+
+{psee}
+Online:
+{helpb sureg},
+{helpb constraint}
+{p_end}

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:tree="http://www.treeage.com/modeldefs/tree">
+  <tree:Tree xmi:id="_UnY5EKepEealBaDfA_JhXQ">
+    <Node xmi:id="_UnY5EaepEealBaDfA_JhXQ" NameID="Node1" Label="Markov Base" NodeType="MarkovNode">
+      <Node xmi:id="_UnY5EqepEealBaDfA_JhXQ" NameID="Node2" Label="Alive" NodeType="ChanceNode">
+        <MarkovData xsi:type="tree:MarkovNonAbsorbingStateData" xmi:id="_UnY5E6epEealBaDfA_JhXQ">
+          <StateReward xmi:id="_UnY5FKepEealBaDfA_JhXQ" Set="1">
+            <Init xmi:id="_UnY5FaepEealBaDfB-JhXQ" Value="0"/>
+            <Incr xmi:id="_UnY5FqepEealBaDfB-JhXQ" Value="0"/>
+            <Final xmi:id="_UnY5F6epEealBaDfB-JhXQ" Value="0"/>
+          </StateReward>
+        </MarkovData>
+        <Node xmi:id="_UnY5GKepEealBaDfB-JhXQ" NameID="Node4" Label="Survive" NodeType="TerminalNode">
+          <MarkovData xsi:type="tree:MarkovJumpTransitionData" xmi:id="_UnY5GaepEealBaDfB-JhXQ" MarkovJumpState="Alive"/>
+        </Node>
+        <Node xmi:id="_UnY5GqepEealBaDfC9JhXQ" NameID="Node5" Label="Die" NodeType="TerminalNode">
+          <MarkovData xsi:type="tree:MarkovJumpTransitionData" xmi:id="_UnY5G6epEealBaDfC9JhXQ" MarkovJumpState="Dead"/>
+        </Node>
+      </Node>
+      <Node xmi:id="_UnY5HKepEealBaDfC9JhXQ" NameID="Node3" Label="Dead" NodeType="TerminalNode">
+        <MarkovData xsi:type="tree:MarkovStateData" xmi:id="_UnY5HaepEealBaDfC9JhXQ">
+          <StateReward xmi:id="_UnY5HqepEealBaDfC9JhXQ" Set="1">
+            <Init xmi:id="_UnY5H6epEealBaDfD8JhXQ" Value="0"/>
+            <Incr xmi:id="_UnY5IKepEealBaDfD8JhXQ" Value="0"/>
+            <Final xmi:id="_UnY5IaepEealBaDfD8JhXQ" Value="0"/>
+          </StateReward>
+        </MarkovData>
+      </Node>
+    </Node>
+    <CategoriesRoot xmi:id="_UnY5IqepEealBaDfD8JhXQ"/>
+    <PreferenceSet xmi:id="_UnY5I6epEealBaDfD8JhXQ" NameID="Pref. set 1">
+      <Preference xmi:id="_UnY5JKepEealBaDfE7JhXQ" Name="locale" Value="ja_JP"/>
+      <Preference xmi:id="_UnY5JaepEealBaDfE7JhXQ" Name="useCustomRegionalNumericSettings" Value="false"/>
+    </PreferenceSet>
+  </tree:Tree>
+  <notation:Diagram xmi:id="_UnY5JqepEealBaDfE7JhXQ" type="TreeDocument" element="#_UnY5EKepEealBaDfA_JhXQ" measurementUnit="Himetric">
+    <children xmi:id="_UnY5J6epEealBaDfE7JhXQ" type="TreeDocument_Tree">
+      <children xmi:id="_UnY5KKepEealBaDfE7JhXQ" type="MarkovNode" element="#_UnY5EaepEealBaDfA_JhXQ">
+        <children xmi:id="_UnY5KaepEealBaDfF6JhXQ" type="TreeNode_Label"/>
+        <children xmi:id="_UnY5KqepEealBaDfF6JhXQ" visible="false" type="TreeNode_Probability"/>
+        <children xmi:id="_UnY5K6epEealBaDfF6JhXQ" type="TreeNode_Variables"/>
+        <styles xsi:type="notation:ShapeStyle" xmi:id="_UnY5LKepEealBaDfF6JhXQ" lineColor="0"/>
+      </children>
+      <children xmi:id="_UnY5LaepEealBaDfF6JhXQ" type="ChanceNode" element="#_UnY5EqepEealBaDfA_JhXQ">
+        <children xmi:id="_UnY5LqepEealBaDfG5JhXQ" type="TreeNode_Label"/>
+        <children xmi:id="_UnY5L6epEealBaDfG5JhXQ" type="TreeNode_Probability"/>
+        <children xmi:id="_UnY5MKepEealBaDfG5JhXQ" type="TreeNode_Variables"/>
+        <styles xsi:type="notation:ShapeStyle" xmi:id="_UnY5MaepEealBaDfG5JhXQ" lineColor="0"/>
+      </children>
+      <children xmi:id="_UnY5MqepEealBaDfG5JhXQ" type="TerminalNode" element="#_UnY5GKepEealBaDfB-JhXQ">
+        <children xmi:id="_UnY5M6epEealBaDfH4JhXQ" type="TreeNode_Label"/>
+        <children xmi:id="_UnY5NKepEealBaDfH4JhXQ" type="TreeNode_Probability"/>
+        <children xmi:id="_UnY5NaepEealBaDfH4JhXQ" type="TreeNode_Variables"/>
+        <styles xsi:type="notation:ShapeStyle" xmi:id="_UnY5NqepEealBaDfH4JhXQ" lineColor="0"/>
+      </children>
+      <children xmi:id="_UnY5N6epEealBaDfH4JhXQ" type="TerminalNode" element="#_UnY5GqepEealBaDfC9JhXQ">
+        <children xmi:id="_UnY5OKepEealBaDfI3JhXQ" type="TreeNode_Label"/>
+        <children xmi:id="_UnY5OaepEealBaDfI3JhXQ" type="TreeNode_Probability"/>
+        <children xmi:id="_UnY5OqepEealBaDfI3JhXQ" type="TreeNode_Variables"/>
+        <styles xsi:type="notation:ShapeStyle" xmi:id="_UnY5O6epEealBaDfI3JhXQ" lineColor="0"/>
+      </children>
+      <children xmi:id="_UnY5PKepEealBaDfI3JhXQ" type="TerminalNode" element="#_UnY5HKepEealBaDfC9JhXQ">
+        <children xmi:id="_UnY5PaepEealBaDfJ2JhXQ" type="TreeNode_Label"/>
+        <children xmi:id="_UnY5PqepEealBaDfJ2JhXQ" type="TreeNode_Probability"/>
+        <children xmi:id="_UnY5P6epEealBaDfJ2JhXQ" type="TreeNode_Variables"/>
+        <styles xsi:type="notation:ShapeStyle" xmi:id="_UnY5QKepEealBaDfJ2JhXQ" lineColor="0"/>
+      </children>
+      <styles xsi:type="notation:ShapeStyle" xmi:id="_UnY5QaepEealBaDfJ2JhXQ" lineColor="0"/>
+      <layoutConstraint xsi:type="notation:Bounds" xmi:id="_UnY5QqepEealBaDfK1JhXQ"/>
+    </children>
+    <children xmi:id="_UnY5Q6epEealBaDfK1JhXQ" type="TreeExpectedValues">
+      <children xmi:id="_UnY5RKepEealBaDfK1JhXQ" type="ExpectedValue" element="#_UnY5KKepEealBaDfE7JhXQ">
+        <children xmi:id="_UnY5RaepEealBaDfK1JhXQ" type="Description"/>
+        <styles xsi:type="notation:ShapeStyle" xmi:id="_UnY5RqepEealBaDfK1JhXQ" lineColor="0"/>
+        <layoutConstraint xsi:type="notation:Bounds" xmi:id="_UnY5R6epEealBaDfL0JhXQ" x="120" y="-168"/>
+      </children>
+      <children xmi:id="_UnY5SKepEealBaDfL0JhXQ" type="ExpectedValue" element="#_UnY5LaepEealBaDfF6JhXQ">
+        <children xmi:id="_UnY5SaepEealBaDfL0JhXQ" type="Description"/>
+        <styles xsi:type="notation:ShapeStyle" xmi:id="_UnY5SqepEealBaDfL0JhXQ" lineColor="0"/>
+        <layoutConstraint xsi:type="notation:Bounds" xmi:id="_UnY5S6epEealBaDfL0JhXQ" x="120" y="-168"/>
+      </children>
+      <children xmi:id="_UnY5TKepEealBaDfMzJhXQ" type="ExpectedValue" element="#_UnY5MqepEealBaDfG5JhXQ">
+        <children xmi:id="_UnY5TaepEealBaDfMzJhXQ" type="Description"/>
+        <styles xsi:type="notation:ShapeStyle" xmi:id="_UnY5TqepEealBaDfMzJhXQ" lineColor="0"/>
+        <layoutConstraint xsi:type="notation:Bounds" xmi:id="_UnY5T6epEealBaDfMzJhXQ" x="120" y="-168"/>
+      </children>
+      <children xmi:id="_UnY5UKepEealBaDfMzJhXQ" type="ExpectedValue" element="#_UnY5N6epEealBaDfH4JhXQ">
+        <children xmi:id="_UnY5UaepEealBaDfNyJhXQ" type="Description"/>
+        <styles xsi:type="notation:ShapeStyle" xmi:id="_UnY5UqepEealBaDfNyJhXQ" lineColor="0"/>
+        <layoutConstraint xsi:type="notation:Bounds" xmi:id="_UnY5U6epEealBaDfNyJhXQ" x="120" y="-168"/>
+      </children>
+      <children xmi:id="_UnY5VKepEealBaDfNyJhXQ" type="ExpectedValue" element="#_UnY5PKepEealBaDfI3JhXQ">
+        <children xmi:id="_UnY5VaepEealBaDfNyJhXQ" type="Description"/>
+        <styles xsi:type="notation:ShapeStyle" xmi:id="_UnY5VqepEealBaDfOxJhXQ" lineColor="0"/>
+        <layoutConstraint xsi:type="notation:Bounds" xmi:id="_UnY5V6epEealBaDfOxJhXQ" x="120" y="-168"/>
+      </children>
+      <styles xsi:type="notation:ShapeStyle" xmi:id="_UnY5WKepEealBaDfOxJhXQ"/>
+      <element xsi:nil="true"/>
+      <layoutConstraint xsi:type="notation:Bounds" xmi:id="_UnY5WaepEealBaDfOxJhXQ"/>
+    </children>
+    <children xmi:id="_UnY5WqepEealBaDfOxJhXQ" type="TreeDocument_Notes">
+      <element xsi:nil="true"/>
+    </children>
+    <styles xsi:type="notation:DiagramStyle" xmi:id="_UnY5W6epEealBaDfPwJhXQ">
+      <verticalGuides xmi:id="_UnY5XKepEealBaDfPwJhXQ" position="173">
+        <nodeMap xmi:id="_UnY5XaepEealBaDfPwJhXQ" value="Right" key="#_UnY5KKepEealBaDfE7JhXQ"/>
+      </verticalGuides>
+      <verticalGuides xmi:id="_UnY5XqepEealBaDfPwJhXQ" position="346">
+        <nodeMap xmi:id="_UnY5X6epEealBaDfPwJhXQ" value="Right" key="#_UnY5LaepEealBaDfF6JhXQ"/>
+        <nodeMap xmi:id="_UnY5YKepEealBaDfQvJhXQ" value="Right" key="#_UnY5PKepEealBaDfI3JhXQ"/>
+      </verticalGuides>
+      <verticalGuides xmi:id="_UnY5YaepEealBaDfQvJhXQ" position="519">
+        <nodeMap xmi:id="_UnY5YqepEealBaDfQvJhXQ" value="Right" key="#_UnY5MqepEealBaDfG5JhXQ"/>
+        <nodeMap xmi:id="_UnY5Y6epEealBaDfQvJhXQ" value="Right" key="#_UnY5N6epEealBaDfH4JhXQ"/>
+      </verticalGuides>
+    </styles>
+  </notation:Diagram>
+</xmi:XMI>

@@ -1,0 +1,8 @@
+from bs4 import BeautifulSoup
+import urllib.request
+
+html = urllib.request.urlopen("http://en.wikipedia.org/wiki/RStudio")
+soup = BeautifulSoup(html)
+
+print(soup.prettify())
+soup.find_all("a")

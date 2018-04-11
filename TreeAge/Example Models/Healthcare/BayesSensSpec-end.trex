@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:tree="http://www.treeage.com/modeldefs/tree">
+  <tree:Tree xmi:id="_jjoqwBlYEeOex89xA_WuWw">
+    <Node xmi:id="_jjoqwRlYEeOex89xA_WuWw" NameID="Node1" Label="Give test" NodeType="ChanceNode">
+      <Definition xmi:id="_jjoqwhlYEeOex89xA_WuWw" Variable="prevalence" Value="0.6" Comment=""/>
+      <Definition xmi:id="_jjoqwxlYEeOex89xA_WuWw" Variable="sensitivity" Value="0.9"/>
+      <Definition xmi:id="_jjoqxBlYEeOex89xA_WuWw" Variable="specificity" Value="0.8"/>
+      <Definition xmi:id="_jjoqxRlYEeOex89xB-WuWw" Variable="_pTruePos" Value="(prevalence*sensitivity)/((prevalence*sensitivity)+((1-prevalence)*(1-specificity)))"/>
+      <Definition xmi:id="_jjoqxhlYEeOex89xB-WuWw" Variable="_pFalsePos" Value="((1-prevalence)*(1-specificity))/((prevalence*sensitivity)+((1-prevalence)*(1-specificity)))"/>
+      <Definition xmi:id="_jjoqxxlYEeOex89xB-WuWw" Variable="_pTstPos" Value="((prevalence*sensitivity)+((1-prevalence)*(1-specificity)))"/>
+      <Definition xmi:id="_jjoqyBlYEeOex89xB-WuWw" Variable="_pFalseNeg" Value="(prevalence*(1-sensitivity))/((prevalence*(1-sensitivity))+((1-prevalence)*specificity))"/>
+      <Definition xmi:id="_jjoqyRlYEeOex89xB-WuWw" Variable="_pTrueNeg" Value="((1-prevalence)*specificity)/((prevalence*(1-sensitivity))+((1-prevalence)*specificity))"/>
+      <Definition xmi:id="_jjoqyhlYEeOex89xC9WuWw" Variable="_pTstNeg" Value="((prevalence*(1-sensitivity))+((1-prevalence)*specificity))"/>
+      <Definition xmi:id="_jjoqyxlYEeOex89xC9WuWw" Variable="newvar" Value="999" Comment=""/>
+      <Node xmi:id="_jjoqzBlYEeOex89xC9WuWw" NameID="Node3" Label="Test Pos" NodeType="ChanceNode">
+        <Prob xmi:id="_jjoqzRlYEeOex89xC9WuWw" Value="_pTstPos"/>
+        <Node xmi:id="_jjoqzhlYEeOex89xC9WuWw" NameID="Node5" Label="Condition Pos" NodeType="TerminalNode">
+          <Prob xmi:id="_jjoqzxlYEeOex89xD8WuWw" Value="_pTruePos"/>
+          <Payoff xmi:id="_jjoq0BlYEeOex89xD8WuWw" Set="1" Value="0"/>
+        </Node>
+        <Node xmi:id="_jjoq0RlYEeOex89xD8WuWw" NameID="Node4" Label="Condition Neg" NodeType="TerminalNode">
+          <Prob xmi:id="_jjoq0hlYEeOex89xD8WuWw" Value="_pFalsePos"/>
+          <Payoff xmi:id="_jjoq0xlYEeOex89xD8WuWw" Set="1" Value="0"/>
+        </Node>
+      </Node>
+      <Node xmi:id="_jjoq1BlYEeOex89xE7WuWw" NameID="Node2" Label="Test Neg" NodeType="ChanceNode">
+        <Prob xmi:id="_jjoq1RlYEeOex89xE7WuWw" Value="_pTstNeg"/>
+        <Node xmi:id="_jjoq1hlYEeOex89xE7WuWw" NameID="Node7" Label="Condition Pos" NodeType="TerminalNode">
+          <Prob xmi:id="_jjoq1xlYEeOex89xE7WuWw" Value="_pFalseNeg"/>
+          <Payoff xmi:id="_jjoq2BlYEeOex89xE7WuWw" Set="1" Value="0"/>
+        </Node>
+        <Node xmi:id="_jjoq2RlYEeOex89xF6WuWw" NameID="Node6" Label="Condition Neg" NodeType="TerminalNode">
+          <Prob xmi:id="_jjoq2hlYEeOex89xF6WuWw" Value="_pTrueNeg"/>
+          <Payoff xmi:id="_jjoq2xlYEeOex89xF6WuWw" Set="1" Value="0"/>
+        </Node>
+      </Node>
+    </Node>
+    <Variable xmi:id="_jjoq3BlYEeOex89xF6WuWw" NameID="prevalence" Label="" Comment=""/>
+    <Variable xmi:id="_jjoq3RlYEeOex89xF6WuWw" NameID="sensitivity" Label="" Comment=""/>
+    <Variable xmi:id="_jjoq3hlYEeOex89xG5WuWw" NameID="specificity" Label="" Comment=""/>
+    <Variable xmi:id="_jjoq3xlYEeOex89xG5WuWw" NameID="_pTruePos" Label="Bayes revision: Condition Pos" ShowInTree="false"/>
+    <Variable xmi:id="_jjoq4BlYEeOex89xG5WuWw" NameID="_pFalsePos" Label="Bayes revision: Condition Neg" ShowInTree="false"/>
+    <Variable xmi:id="_jjoq4RlYEeOex89xG5WuWw" NameID="_pTstPos" Label="Bayes revision: Test Pos" ShowInTree="false"/>
+    <Variable xmi:id="_jjoq4hlYEeOex89xG5WuWw" NameID="_pFalseNeg" Label="Bayes revision: Condition Pos" ShowInTree="false"/>
+    <Variable xmi:id="_jjpR0BlYEeOex89xH4WuWw" NameID="_pTrueNeg" Label="Bayes revision: Condition Neg" ShowInTree="false"/>
+    <Variable xmi:id="_jjpR0RlYEeOex89xH4WuWw" NameID="_pTstNeg" Label="Bayes revision: Test Neg" ShowInTree="false"/>
+    <Variable xmi:id="_jjpR0hlYEeOex89xH4WuWw" NameID="newvar" Label="" Comment=""/>
+    <CategoriesRoot xmi:id="_jjpR0xlYEeOex89xH4WuWw"/>
+    <PreferenceSet xmi:id="_jjpR1BlYEeOex89xH4WuWw" NameID="Pref. set 1">
+      <Preference xmi:id="_jjpR1RlYEeOex89xI3WuWw" Name="locale" Value="en_US"/>
+      <Preference xmi:id="_jjpR1hlYEeOex89xI3WuWw" Name="useCustomRegionalNumericSettings" Value="false"/>
+      <Preference xmi:id="_jjpR1xlYEeOex89xI3WuWw" Name="rollbackCalc" Value="rbc_probs"/>
+    </PreferenceSet>
+  </tree:Tree>
+  <notation:Diagram xmi:id="_jjpR2BlYEeOex89xI3WuWw" type="TreeDocument" element="#_jjoqwBlYEeOex89xA_WuWw" measurementUnit="Himetric">
+    <children xmi:id="_jjpR2RlYEeOex89xI3WuWw" type="TreeDocument_Tree">
+      <children xmi:id="_jjpR2hlYEeOex89xJ2WuWw" type="ChanceNode" element="#_jjoqwRlYEeOex89xA_WuWw">
+        <children xmi:id="_jjpR2xlYEeOex89xJ2WuWw" type="TreeNode_Label"/>
+        <children xmi:id="_jjpR3BlYEeOex89xJ2WuWw" type="TreeNode_Probability"/>
+        <children xmi:id="_jjpR3RlYEeOex89xJ2WuWw" type="TreeNode_Variables"/>
+        <styles xsi:type="notation:ShapeStyle" xmi:id="_jjpR3hlYEeOex89xJ2WuWw" fontName="Segoe UI" lineColor="0"/>
+      </children>
+      <children xmi:id="_jjpR3xlYEeOex89xK1WuWw" type="ChanceNode" element="#_jjoq1BlYEeOex89xE7WuWw">
+        <children xmi:id="_jjpR4BlYEeOex89xK1WuWw" type="TreeNode_Label"/>
+        <children xmi:id="_jjpR4RlYEeOex89xK1WuWw" type="TreeNode_Probability"/>
+        <children xmi:id="_jjpR4hlYEeOex89xK1WuWw" type="TreeNode_Variables"/>
+        <styles xsi:type="notation:ShapeStyle" xmi:id="_jjpR4xlYEeOex89xK1WuWw" fontName="Segoe UI" lineColor="0"/>
+      </children>
+      <children xmi:id="_jjpR5BlYEeOex89xL0WuWw" type="ChanceNode" element="#_jjoqzBlYEeOex89xC9WuWw">
+        <children xmi:id="_jjpR5RlYEeOex89xL0WuWw" type="TreeNode_Label"/>
+        <children xmi:id="_jjpR5hlYEeOex89xL0WuWw" type="TreeNode_Probability"/>
+        <children xmi:id="_jjpR5xlYEeOex89xL0WuWw" type="TreeNode_Variables"/>
+        <styles xsi:type="notation:ShapeStyle" xmi:id="_jjpR6BlYEeOex89xL0WuWw" fontName="Segoe UI" lineColor="0"/>
+      </children>
+      <children xmi:id="_jjpR6RlYEeOex89xMzWuWw" type="TerminalNode" element="#_jjoq0RlYEeOex89xD8WuWw">
+        <children xmi:id="_jjpR6hlYEeOex89xMzWuWw" type="TreeNode_Label"/>
+        <children xmi:id="_jjpR6xlYEeOex89xMzWuWw" type="TreeNode_Probability"/>
+        <children xmi:id="_jjpR7BlYEeOex89xMzWuWw" type="TreeNode_Variables"/>
+        <styles xsi:type="notation:ShapeStyle" xmi:id="_jjpR7RlYEeOex89xMzWuWw" fontName="Segoe UI" lineColor="0"/>
+      </children>
+      <children xmi:id="_jjpR7hlYEeOex89xNyWuWw" type="TerminalNode" element="#_jjoqzhlYEeOex89xC9WuWw">
+        <children xmi:id="_jjpR7xlYEeOex89xNyWuWw" type="TreeNode_Label"/>
+        <children xmi:id="_jjpR8BlYEeOex89xNyWuWw" type="TreeNode_Probability"/>
+        <children xmi:id="_jjpR8RlYEeOex89xNyWuWw" type="TreeNode_Variables"/>
+        <styles xsi:type="notation:ShapeStyle" xmi:id="_jjpR8hlYEeOex89xNyWuWw" fontName="Segoe UI" lineColor="0"/>
+      </children>
+      <children xmi:id="_jjpR8xlYEeOex89xOxWuWw" type="TerminalNode" element="#_jjoq2RlYEeOex89xF6WuWw">
+        <children xmi:id="_jjpR9BlYEeOex89xOxWuWw" type="TreeNode_Label"/>
+        <children xmi:id="_jjpR9RlYEeOex89xOxWuWw" type="TreeNode_Probability"/>
+        <children xmi:id="_jjpR9hlYEeOex89xOxWuWw" type="TreeNode_Variables"/>
+        <styles xsi:type="notation:ShapeStyle" xmi:id="_jjpR9xlYEeOex89xOxWuWw" fontName="Segoe UI" lineColor="0"/>
+      </children>
+      <children xmi:id="_jjpR-BlYEeOex89xPwWuWw" type="TerminalNode" element="#_jjoq1hlYEeOex89xE7WuWw">
+        <children xmi:id="_jjpR-RlYEeOex89xPwWuWw" type="TreeNode_Label"/>
+        <children xmi:id="_jjpR-hlYEeOex89xPwWuWw" type="TreeNode_Probability"/>
+        <children xmi:id="_jjpR-xlYEeOex89xPwWuWw" type="TreeNode_Variables"/>
+        <styles xsi:type="notation:ShapeStyle" xmi:id="_jjpR_BlYEeOex89xPwWuWw" fontName="Segoe UI" lineColor="0"/>
+      </children>
+      <styles xsi:type="notation:ShapeStyle" xmi:id="_jjpR_RlYEeOex89xQvWuWw" fontName="Segoe UI" lineColor="0"/>
+      <layoutConstraint xsi:type="notation:Bounds" xmi:id="_jjpR_hlYEeOex89xQvWuWw"/>
+    </children>
+    <children xmi:id="_jjpR_xlYEeOex89xQvWuWw" type="TreeExpectedValues">
+      <children xsi:type="notation:Shape" xmi:id="_jjpSABlYEeOex89xQvWuWw" type="ExpectedValue" element="#_jjpR2hlYEeOex89xJ2WuWw" fontName="Segoe UI" description="Text" lineColor="0">
+        <children xsi:type="notation:BasicDecorationNode" xmi:id="_jjpSARlYEeOex89xQvWuWw" type="DiagramName"/>
+        <children xsi:type="notation:BasicDecorationNode" xmi:id="_jjpSAhlYEeOex89xRuWuWw" type="Description"/>
+        <layoutConstraint xsi:type="notation:Bounds" xmi:id="_jjpSAxlYEeOex89xRuWuWw" x="132" y="-186"/>
+      </children>
+      <children xsi:type="notation:Shape" xmi:id="_jjpSBBlYEeOex89xRuWuWw" type="ExpectedValue" element="#_jjpR3xlYEeOex89xK1WuWw" fontName="Segoe UI" description="Text" lineColor="0">
+        <children xsi:type="notation:BasicDecorationNode" xmi:id="_jjpSBRlYEeOex89xRuWuWw" type="DiagramName"/>
+        <children xsi:type="notation:BasicDecorationNode" xmi:id="_jjpSBhlYEeOex89xRuWuWw" type="Description"/>
+        <layoutConstraint xsi:type="notation:Bounds" xmi:id="_jjpSBxlYEeOex89xStWuWw" x="132" y="-186"/>
+      </children>
+      <children xsi:type="notation:Shape" xmi:id="_jjpSCBlYEeOex89xStWuWw" type="ExpectedValue" element="#_jjpR5BlYEeOex89xL0WuWw" fontName="Segoe UI" description="Text" lineColor="0">
+        <children xsi:type="notation:BasicDecorationNode" xmi:id="_jjpSCRlYEeOex89xStWuWw" type="DiagramName"/>
+        <children xsi:type="notation:BasicDecorationNode" xmi:id="_jjpSChlYEeOex89xStWuWw" type="Description"/>
+        <layoutConstraint xsi:type="notation:Bounds" xmi:id="_jjpSCxlYEeOex89xStWuWw" x="132" y="-186"/>
+      </children>
+      <children xsi:type="notation:Shape" xmi:id="_jjpSDBlYEeOex89xTsWuWw" type="ExpectedValue" element="#_jjpR6RlYEeOex89xMzWuWw" fontName="Segoe UI" description="Text" lineColor="0">
+        <children xsi:type="notation:BasicDecorationNode" xmi:id="_jjpSDRlYEeOex89xTsWuWw" type="DiagramName"/>
+        <children xsi:type="notation:BasicDecorationNode" xmi:id="_jjp44BlYEeOex89xTsWuWw" type="Description"/>
+        <layoutConstraint xsi:type="notation:Bounds" xmi:id="_jjp44RlYEeOex89xTsWuWw" x="132" y="-186"/>
+      </children>
+      <children xsi:type="notation:Shape" xmi:id="_jjp44hlYEeOex89xTsWuWw" type="ExpectedValue" element="#_jjpR7hlYEeOex89xNyWuWw" fontName="Segoe UI" description="Text" lineColor="0">
+        <children xsi:type="notation:BasicDecorationNode" xmi:id="_jjp44xlYEeOex89xUrWuWw" type="DiagramName"/>
+        <children xsi:type="notation:BasicDecorationNode" xmi:id="_jjp45BlYEeOex89xUrWuWw" type="Description"/>
+        <layoutConstraint xsi:type="notation:Bounds" xmi:id="_jjp45RlYEeOex89xUrWuWw" x="132" y="-186"/>
+      </children>
+      <children xsi:type="notation:Shape" xmi:id="_jjp45hlYEeOex89xUrWuWw" type="ExpectedValue" element="#_jjpR8xlYEeOex89xOxWuWw" fontName="Segoe UI" description="Text" lineColor="0">
+        <children xsi:type="notation:BasicDecorationNode" xmi:id="_jjp45xlYEeOex89xUrWuWw" type="DiagramName"/>
+        <children xsi:type="notation:BasicDecorationNode" xmi:id="_jjp46BlYEeOex89xVqWuWw" type="Description"/>
+        <layoutConstraint xsi:type="notation:Bounds" xmi:id="_jjp46RlYEeOex89xVqWuWw" x="132" y="-186"/>
+      </children>
+      <children xsi:type="notation:Shape" xmi:id="_jjp46hlYEeOex89xVqWuWw" type="ExpectedValue" element="#_jjpR-BlYEeOex89xPwWuWw" fontName="Segoe UI" description="Text" lineColor="0">
+        <children xsi:type="notation:BasicDecorationNode" xmi:id="_jjp46xlYEeOex89xVqWuWw" type="DiagramName"/>
+        <children xsi:type="notation:BasicDecorationNode" xmi:id="_jjp47BlYEeOex89xVqWuWw" type="Description"/>
+        <layoutConstraint xsi:type="notation:Bounds" xmi:id="_jjp47RlYEeOex89xWpWuWw" x="132" y="-186"/>
+      </children>
+      <element xsi:nil="true"/>
+    </children>
+    <children xmi:id="_jjp47hlYEeOex89xWpWuWw" type="TreeTables">
+      <element xsi:nil="true"/>
+    </children>
+    <children xmi:id="_jjp47xlYEeOex89xWpWuWw" type="TreeDocument_Notes">
+      <element xsi:nil="true"/>
+    </children>
+    <styles xsi:type="notation:DiagramStyle" xmi:id="_jjp48BlYEeOex89xWpWuWw">
+      <verticalGuides xmi:id="_jjp48RlYEeOex89xWpWuWw" position="164">
+        <nodeMap xmi:id="_jjp48hlYEeOex89xXoWuWw" value="Right" key="#_jjpR2hlYEeOex89xJ2WuWw"/>
+      </verticalGuides>
+      <verticalGuides xmi:id="_jjp48xlYEeOex89xXoWuWw" position="328">
+        <nodeMap xmi:id="_jjp49BlYEeOex89xXoWuWw" value="Right" key="#_jjpR3xlYEeOex89xK1WuWw"/>
+        <nodeMap xmi:id="_jjp49RlYEeOex89xXoWuWw" value="Right" key="#_jjpR5BlYEeOex89xL0WuWw"/>
+      </verticalGuides>
+      <verticalGuides xmi:id="_jjp49hlYEeOex89xXoWuWw" position="492">
+        <nodeMap xmi:id="_jjp49xlYEeOex89xYnWuWw" value="Right" key="#_jjpR6RlYEeOex89xMzWuWw"/>
+        <nodeMap xmi:id="_jjp4-BlYEeOex89xYnWuWw" value="Right" key="#_jjpR7hlYEeOex89xNyWuWw"/>
+        <nodeMap xmi:id="_jjp4-RlYEeOex89xYnWuWw" value="Right" key="#_jjpR8xlYEeOex89xOxWuWw"/>
+        <nodeMap xmi:id="_jjp4-hlYEeOex89xYnWuWw" value="Right" key="#_jjpR-BlYEeOex89xPwWuWw"/>
+      </verticalGuides>
+    </styles>
+  </notation:Diagram>
+</xmi:XMI>
