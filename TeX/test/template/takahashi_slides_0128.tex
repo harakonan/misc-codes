@@ -1,0 +1,508 @@
+
+\documentclass[14pt]{beamer}
+
+\usepackage{amsmath}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+
+\usepackage[english]{babel}
+
+%\AtBeginDvi{\special{pdf:tounicode 90ms-RKSJ-UCS2}} 
+%\AtBeginDvi{\special{pdf:tounicode EUC-UCS2}}
+
+\usetheme{Boadilla}
+\usecolortheme{default}
+\usefonttheme{professionalfonts}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{blocks}[rounded][shadow=false]
+%\setbeamercolor{alartblock}{fg=red}
+
+\usebackgroundtemplate
+
+\usepackage{setspace}
+
+\title[Master's Thesis]{How Does Financial Incentive to Hospital Affect Inpatient Care?} 
+%\title[Master's Thesis]{How Does Financial Incentive to Hospital Affect Physician's Medical Decision?} 
+%\subtitle{Evidence from Nonlinear Reimbursement in Japan}
+\subtitle{Evidence from Reimbursement System in Japan}
+\author[Masaki Takahashi]{Masaki Takahashi}
+\institute[Univ. of Tokyo]{Graduate School of Economics, University of Tokyo}
+\date{January 28, 2015}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\frame{\tableofcontents}
+
+\section{Introduction}
+
+\begin{frame}[allowframebreaks]
+\frametitle{Motivation}
+\begin{itemize}
+\item Under rising medical expenditure, reimbursement becomes more important as financial incentive to contain health care cost.
+\item In Japan, per-diem fixed payment system ``DPC" was introduced to reduce unnecessary health care.
+\item It is critical to understand how medical provider respond to financial incentive.
+%\item It is important to construct reimbursement system that reduce unnecessary health care.
+%\item In the case of inpatient care, financial incentive is provided through reimbursement to hospitals.
+%\item How physicians respond to financial incentives for hospitals is crucial to health care policy.
+%\item In aging society, like Japan, it is important to understand how financial incentives affect medical providers for constructing ``necessary and sufficient" health care system. 
+
+\item Exploiting DPC implementation, we can examine the impact of financial incentive to medical provider mainly through length of stay.
+%\item Implementation of DPC provide opportunity to examine the important questions in health care policy.
+\end{itemize}
+
+\framebreak
+ 
+Research Questions:
+%\vspace{\baselineskip}
+\begin{enumerate}
+\item Does DPC implementation reduce length of stay? 
+%\item If physician has several ways to make a profit for hospital, which ones to be chosen?
+\begin{itemize}
+\item Is DPC effective to solve long-term hospitalization problem in Japan?
+%\item Does hospital flexibly adjust length of stay right after policy change?
+\item Compared with other treatment choices?
+%\item Reduce length of stay? (Bed management)
+%\item Cut cost of input per day? 
+%\item Increase provision of profitable treatment? (Supplier-induced demand)
+\end{itemize}
+\vspace{\baselineskip}
+\item How does nonlinear-pricing schedule affect distribution of length of stay?
+\begin{itemize}
+\item Does hospital discharge patients right before reimbursement drop?
+%\item Does distribution of length of stay bunch at discontinuity point of nonlinear per-diem schedule?
+%\item What kind of patients are affected by nonlinear-pricing incentive?
+\end{itemize}
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\frametitle{What I do}
+\begin{enumerate}
+\item Estimate the impact of DPC implementation on length of stay and other variables in DID framework using patient level data.
+\vspace{\baselineskip}
+\item Estimate the increase in discharged patients right before reimbursement drop using method proposed by Chetty et al.(2011).
+%\item Estimate the bunching in distribution of length of stay at the discontinuity point of nonlinear schedule using method proposed by Chetty et al.(2011 QJE).
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\frametitle{Main Fidings}
+First question:
+\begin{itemize}
+\item Length of stay is reduced by 0.85 days due to DPC implementation.
+\item Treatment choice is less affected by DPC than length of stay is.
+%\item Profitable treatment (operation in this case) were NOT increased.
+\end{itemize}
+Second question:
+\begin{itemize}
+\item The number of discharged patients increases right before reimbursement drop.
+\item Nonlinear incentive is concentrated on patients under short hospitalization.
+%\item Nonlinear incentive is more significant for patients whose reimbursent is composed largely of nonlinear schedule.
+%\item Distribution of length of stay bunch at kink of nonlinear schedule.
+%\item Bunching is more significant for patients whose reimbursent is composed largely of nonlinear incentive.
+%\item Distribution does not bunch at kink point of DPC group-specific schedule.
+\end{itemize}
+\end{frame}
+
+\section{Institutional Background}
+
+\begin{frame}[allowframebreaks]
+\frametitle{Institutional Background}
+Traditionally, reimbursement had been paid through fee-for-service (FFS) in Japan.\par
+\vspace{5pt}
+\centering{
+{\small Figure 1. FFS Payment System}\par
+\includegraphics[width=6.5cm]{ffsfigure.png}
+}
+
+%\begin{itemize}
+%\item Hospitals (and physicians) have little incentive to cut cost because of cost-plus-margin payment.
+%\item Hospital basic charge were paid by per-diem schedule, and the payment is dropped at 14th and 30th day of hospitalization.
+%\end{itemize}
+
+\framebreak
+
+\begin{center}
+{\small Figure 2. Per-diem Hospital Basic Charge of FFS}
+\includegraphics[width=10.5cm]{schedule_ffs2.png}
+\end{center}
+
+\framebreak
+
+%\begin{itemize}
+\flushleft{
+In 2003, alternative payment system called DPC was introduced for inpatient care.
+}
+\vspace{5pt}
+
+\centering{
+{\small Figure 3. DPC Payment System}\par
+\includegraphics[width=7cm]{dpcfigure.png}
+}
+
+%\item Medical procedures regarding operation are paid through FFS as before.
+%\item Other procedures such as medication, injection, diagnostic imaging, are paid through per-diem fixed payment regardless of cost of input.
+%\item Schedule of per-diem payment differs among DPC groups that are divided based on disease and method of treatment.
+%\end{itemize}
+
+\framebreak
+
+\begin{center}
+{\small Figure 4. Per-diem Fixed Payment of DPC}
+\includegraphics[width=10.5cm]{schedule_dpc3.png}
+\end{center}
+\end{frame}
+
+\section{Financial Incentives}
+
+\begin{frame}[allowframebreaks]
+\frametitle{Financial Incentives}
+\begin{itemize}
+\item DPC reduces length of stay if hospital improve bed turnover rate to keep profitable short-term hospitalization.
+\item If hospitals cannot admit sufficient new patients, length of stay might not be reduced.
+%DPC implementation gave hospitals incentives to discharge patients under long-term hospitalization and admit new patients.
+%\vspace{\baselineskip}
+\item Additionally, DPC possibly induce hospitals to;
+\begin{itemize}
+\item Increase frequency and/or input of surgery.
+\item Reduce medical input in ward.
+\end{itemize}
+\end{itemize}
+
+\framebreak
+
+Length of stay has important role in nonlinear-pricing schedule.
+\begin{itemize}
+\item Under nonlinear-pricing, distribution of length of stay is expected to ``bunch" at kink point\par (see Figure 5).
+\item By changing from FFS to DPC, kinks at 14th and 30th day of hospitalization are eliminated.
+\end{itemize}
+$\Rightarrow$ Bunching at kinks should also be eliminated.
+
+\framebreak
+
+\begin{center}
+{\small Figure 5. Bunching at Kink}
+\includegraphics[width=8cm]{bunching.png}
+\end{center}
+
+\end{frame}
+
+\section{Data}
+
+\begin{frame}[allowframebreaks]
+\frametitle{Data}
+\begin{itemize}
+\item Use medical records of circulatory disease patients in DPC database in 2008 and 2009.
+%\item Adoption of DPC is decided by each hospital and the trend of adoption peaked at this period.
+\item Each hospital can decide when (whether) to adopt DPC.
+\item Before adoption, hospitals submit medical records under FFS payment for two years.
+\item Our sample contains only hospitals which are willing to adopt DPC.
+%\item We can also observe medical records of preparation period.
+
+\end{itemize}
+
+\framebreak
+
+Exploiting one year difference in timing of adoption.
+
+\begin{center}
+{\small Figure 6. Variation in payment system}
+\includegraphics[width=10cm]{timing.png}
+\end{center}
+
+%\framebreak
+
+%Difference in the timing of adoption generates variation of payment system among hospitals.
+
+
+
+\framebreak
+
+\begin{center}
+\includegraphics[width=9cm]{summarystat.png}
+\end{center}
+
+\end{frame}
+
+\section{Estimation}
+
+\begin{frame}[allowframebreaks]
+\frametitle{Regression Estimation}
+Basic specification:
+\begin{equation}
+%\begin{split}
+LoS_{iht} = t_{\it 2009} + \alpha_{h} + \beta(DPC*t_{\it 2009}) + \delta_{d} + X'_{iht}\gamma + \epsilon_{iht}
+%\end{split}
+\end{equation}
+$t_{\it 2009}=1$ if $t=2009$\par
+$DPC=1$ if hospital is in treatament group\par
+$\alpha_{h}$\ \ : Hospital dummy (336 hospitals).\par
+$\delta_{d}$\ \ \ : DPC group dummy (150 groups).\par
+$X_{iht}$: Patient's characteristics.\par
+$\epsilon_{iht}$\  : Error term (clustered at hospital level).\par
+\vspace{\baselineskip}
+Estimate with negative binomial regression.
+
+\framebreak
+
+\begin{itemize}
+\item Following are also used as dependent variable:
+  \begin{itemize}
+  \item Surgery dummy
+  \item ln(Input of Surgery)
+  \item ln(Average input in ward per day)
+  \end{itemize}
+\item Input was proxied by FFS-equivalent reimbursement.
+\item In the case of surgery dummy, probit was used and DPC group dummies were dropped.
+\item OLS was used for other dependent variables.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}%[allowframebreaks]
+\frametitle{Results of Regression Estimation}
+
+\begin{center}
+\includegraphics[width=12cm]{results3.png}
+\end{center}
+
+\end{frame}
+
+\begin{frame}[allowframebreaks]
+\frametitle{Bunching Estimation}
+\begin{itemize}
+\item Recall that price drop at 15th and 31th day of hospitalization were eliminated by DPC.
+\item What happen to distribution of length of stay around kink?
+\end{itemize}
+
+\begin{columns}
+  \begin{column}{0.5 \textwidth}
+    \begin{center}
+    {\tiny Figure 2. Per-diem Hospital Basic Charge of FFS}
+    \includegraphics[width=6cm]{schedule_ffs2.png}
+    \end{center}
+  \end{column}
+
+  \begin{column}{0.5 \textwidth}
+    \begin{center}
+    {\tiny Figure 4. Fixed payment of DPC}
+    \includegraphics[width=6cm]{schedule_dpc3.png}
+    \end{center}
+  \end{column}
+\end{columns}
+    
+\framebreak
+
+Basic idea of Chetty et al. (2011):
+\begin{enumerate}
+\item Construct ``smooth" counterfactual distribution by polynomial.
+\item Estimate how much more patients were discharged at kink than counterfactual one.
+\end{enumerate}
+
+\centering{
+%{\small Figure 5. Bunching in Distribution}\par
+\includegraphics[width=6cm]{exbunch.png}
+}
+
+\framebreak
+
+\flushleft{
+First, estimate following regression:
+\begin{equation}
+C_j=\sum_{i=0}^p \beta_{i}\cdot(Z_j)^i + \gamma_i \cdot {\bf 1}[Z_j=k]+\epsilon_j
+\end{equation}
+
+$C_j$\ :\ Number of patients discharged at $j$th day.\par
+$Z_j$\ \ :\ $j$th day of hospitalization relative to kink.\par
+$k$\ \ :\ Kink point.\par
+$p$\ \ :\ Degree of polynomial.\par
+
+($p=9$ in basic specification.)
+}
+
+\framebreak
+
+Counterfactual distribution is a predicted value of each $C_j$ excluding contribution of kink:
+
+\begin{equation}
+{\hat C_j}=\sum_{i=0}^p {\hat \beta_{i}}\cdot(Z_j)^i
+\end{equation}
+
+Then, bunching estimate is:
+
+\begin{equation}
+{\hat b}=\frac{C_k-{\hat C_k}}{{\hat C_k}}.
+\end{equation}
+
+To generate standard error, bootstrap was conducted.
+%where $C_k-{\hat C_k}$ is the number of excess discharged patients at kink.
+
+\framebreak
+
+%\begin{itemize}
+%\item Bootstrap is conducted to generate standard error.
+%\vspace{\baselineskip}
+Divide hospitals into following three groups and compare the change of bunching estimates:
+\begin{itemize}
+\item Hospitals that change from FFS to DPC.
+\item Hospitals that keep DPC.
+\item Hospitals that keep FFS.
+\end{itemize}
+%\end{itemize}
+
+\end{frame}
+
+\begin{frame}[allowframebreaks]
+\frametitle{Results of Bunching Estimation}
+Limit sample to patients without surgery.\par
+\vspace{5pt}
+\centering{
+{\small Figure 7. \par ${\sf FFS (Price\ Drop\ at\ 15th\ Day)} \rightarrow {\sf DPC (No\ Price\ Drop)}$}
+\includegraphics[width=12cm]{changehosp_notope_new2.png}
+}
+\flushleft{
+{\scriptsize
+Blue line: Observed distribution \par
+Red line: Counterfactual distribution
+}
+}
+
+\framebreak
+
+\begin{center}
+{\small Figure 8. ${\sf FFS(Price\ Drop\ at\ 15th\ Day)} \rightarrow {\sf FFS(Price\ Drop\ at\ 15th\ Day)}$}
+\includegraphics[width=12cm]{alwaysPREP_notope_new.png}
+\end{center}
+
+\framebreak
+
+\begin{center}
+{\small Figure 9.\par ${\sf DPC(No\ Price\ Drop)} \rightarrow {\sf DPC(No\ Price\ Drop)}$}
+\includegraphics[width=12cm]{alwaysDPC_notope_new.png}
+\end{center}
+
+\framebreak
+
+\begin{itemize}
+\item Bunching estimate decreases only when reimbursement drop is eliminated.
+\item That is, hospital has incentive to discharge patients right before reimbursement drop.
+\item Excess discharge patients are reduced by 66.3\%.
+\end{itemize}
+
+\end{frame}
+
+\section{Conclusion}
+
+\begin{frame}
+\frametitle{Conclusion}
+\begin{itemize}
+\item There is still room to reduce length of stay in Japan.
+\item It is relatively hard to change actual treatment choice through financial incentive.
+\item Nonlinear-incentive affect hospital decision on less-serious patients.
+%\item Length of stay is reduced significantly by DPC implementation.
+%\item Treatment choice is less affected by DPC than length of stay.
+%\item Nonliear-incentive is concentrated on less serious patients.
+%\item If hospitals basic charge is big part of reimbursement (i.e. patients without surgery), bunching incentive gets stronger.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[allowframebreaks]
+\frametitle{References}
+\footnotesize
+\begin{spacing}{0.9}
+[1] Bajari, Patrick Han Hong, Minjung Park, and Robert Town. 2014. ``Estimating price sensitivity of economic agents using discontinuity in nonlinear contracts." {\it Working Paper}.\par
+[2] Chetty, Raj, John N. Friedman, Tore Olsen, and Luigi Pistaferri. 2011. ``Adjustment cost, firm responses, and micro vs macro labor supply elasticities: evidence from danish tax records." {\it Quarterly Journal of Economics}, 126, 749-804.\par
+[3] Cutler, David. 1995. ``The incidence of adverse medical outcome under prospective payment." {\it Econometrica}, 63, 29-50.\par
+[4] Dafny, Leemore. 2005. ``How do hospitals respond to price changes?" {\it American Economic Review}, 95(5), 1525-1547.\par
+[5] Einav, Liran, Amy Finkelstein, and Paul Schrimpf. 2013. ``The response of drug expenditure to non-linear contract design: Evidence from Medicare Part D." {\it Working Paper}.\par
+[6] Ellis, Randall and Thomas McGuire. 1996. ``Hospital response to prospective payment: Moral hazard, selection, and practice-style effects." {\it Journal of Health Economics},15(3), 257-277.\par
+
+\framebreak
+
+[7] Ito, Koichiro. 2014. `` Do consumer respond to marginal or average price?: Evidence from nonlinear electricity pricing." {\it American Economic Review}, 104(2), 537-563.\par
+[8] Marsh, Christina. 2013. ``Estimating demand elasticities using nonlinear pricing." {\it Working Paper}.\par
+[9] Nawata, Kazumitsu and Koichi Kawabuchi. 2010. ``Analysis of length of stay for cataract surgery before and after introduction of Diagnosis Procedure Combination-based inclusive payment system." {\it Japanese Journal of Health Economic and Policy}, 21(3), 291-302.\par
+[10] OECD. 2009. ``OECD Economic Survey JAPAN." {\it OECD}.\par
+[11]Saez, Emmanuel. 2010. ``Do taxpayers bunch at kink points?" {\it American Economic Journal: Economic Policy}, 2(3), 180-212.\par
+[12] Shigeoka, Hitoshi  and Kiyohide Fushimi. 2014. ``Supplier-induced demand for newborn treatment: Evidence from Japan." {\it Journal of Health Economics}, 35, 162-178.\par
+[13] Wang, Kai, Ping Li, Ling Chen, Ken Kato, Makoto Kobayashi, and Kazunobu Yamauchi. 2010. ``Impact of the Japanese Diagnosis Procedure Combination-based Payment System in Japan." {\it Journal of Medical Systems},34, 95-100.
+\end{spacing}
+\end{frame}
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%       Keep for a rainy day       %%%%%%%%%
+
+ \framebreak
+
+\begin{block}{Assumption.  (Ellis and McGuire (1986 JHE))}
+Physician is an agent for both hospital and patient. %but imperfect for patient in the sense of giving too much weight to hospital's financial benefit.
+\end{block}
+
+\begin{itemize}
+\item It is unclear which principals are dominant.
+\item In Japan, almost all physicians are hired by hospitals for inpatient care (not necessarily in US).\par
+\end{itemize}
+$\Rightarrow$ It is reasonable that physicians change medical decisions to make a profit for hospitals under policy change. 
+
+\framebreak
+
+\begin{itemize}
+\item Bunching at 14th day decreases as kink was eliminated.
+\item In the case of all patients, bunching decreases even when kink was NOT eliminated.
+\item If we focus on patients without operation, bunching decreases sharply only when kink was eliminated as expected.
+\end{itemize}
+Note: Bunching does not exist at kink of DPC group-specific kinks.
+
+
+\framebreak
+
+\begin{itemize}
+\item Hospitals flexibly manipulate length of stay to make a profit.
+\item Average medical input per day is also reduced but its significant level is larger than length of stay is.
+\item Operation is not affected by DPC implementation.
+%\item Reduction of the cost of operation is a strong counter evidence of supplier-induced demand.
+\end{itemize}
+
+{\small Figure 7. Change of Bunching at Kink (${\sf FFS} \rightarrow {\sf DPC}$, All Patients)}
+\includegraphics[width=12cm]{changehosp_new.png}
+\end{center}
+
+
+\framebreak
+
+\begin{center}
+{\small Figure 8. ${\sf DPC} \rightarrow {\sf DPC}$, All Patients}
+\includegraphics[width=12cm]{alwaysDPC_new.png}
+\end{center}
+
+\framebreak
+
+\begin{center}
+{\small Figure 9. ${\sf FFS} \rightarrow {\sf FFS}$, All Patients}
+\includegraphics[width=12cm]{alwaysPREP_new.png}
+\end{center}
+
+\framebreak
+
+
