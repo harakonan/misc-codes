@@ -10,31 +10,31 @@
 
 	- For the first time, you need to registor the address of the github repository
 
-			git remote add upstream github repository address
+		  git remote add upstream github repository address
 
 - Commit all current works and push to the upstream
 
-		git add -A
-		git commit -a
-		git push origin master
+	  git add -A
+	  git commit -a
+	  git push origin master
 
 	- If you are working at the branch other than the master branch
 
-			git pull origin master
-			git checkout master
-			git merge current working branch name
+		  git pull origin master
+		  git checkout master
+		  git merge current working branch name
 
 - Pull request
 
-		git add -A
-		git commit -a
-		git push origin harakonan
+	  git add -A
+	  git commit -a
+	  git push origin harakonan
 
 	- harakonan is the name of my working branch
 	- Pull request on the github page after the push
 	- For the first time, you need to create a working branch
 
-			git checkout -b harakonan
+		  git checkout -b harakonan
 
 
 # Font size in LaTeX
@@ -57,7 +57,7 @@
 	- bbl file was not updated without manual compilation
 		- Manual bibtex compilation code
 
-				bibtex file-name w/o extension
+			  bibtex file-name w/o extension
 
 		- The cause may be the use of Havard package
 
@@ -68,34 +68,34 @@
 	- Only use utf-8
 	- Preamble
 
-		    \documentclass[12pt,a4paper,dvipdfmx,upLaTeX]{jsarticle}
+		  \documentclass[12pt,a4paper,dvipdfmx,upLaTeX]{jsarticle}
 
 	- Compilation
 
-			uplatex.sh file-name w/o extension
+		  uplatex.sh file-name w/o extension
 
 
 - pLaTeX
 	- SJIS can be used
 	- Preamble
 
-			\documentclass[12pt,a4paper,dvipdfmx]{jsarticle}
+		  \documentclass[12pt,a4paper,dvipdfmx]{jsarticle}
 
 	- Compilation
 
-			platex.sh file-name w/o extension
+		  platex.sh file-name w/o extension
 
 
 ## Presentations
 - Beamer
 	- Preamble
 
-			\documentclass[dvipdfmx,12pt]{beamer}
-			\usepackage{bxdpx-beamer}
-			\usepackage{pxjahyper}
-			\usepackage{minijs}
-			\renewcommand{\kanjifamilydefault}{\gtdefault}
+		  \documentclass[dvipdfmx,12pt]{beamer}
+		  \usepackage{bxdpx-beamer}
+		  \usepackage{pxjahyper}
+		  \usepackage{minijs}
+		  \renewcommand{\kanjifamilydefault}{\gtdefault}
 
 	- Compilation
 
-			platex.sh file-name w/o extension
+		  platex.sh file-name w/o extension
