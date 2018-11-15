@@ -5,10 +5,8 @@
 # git
 - Update the master branch
 		
-		```
-		git fetch upstream
-		git merge upstream/master
-		```
+	  git fetch upstream
+	  git merge upstream/master
 
 	- For the first time, you need to registor the address of the github repository
 
