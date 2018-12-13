@@ -1,7 +1,0 @@
-        !COMPILER-GENERATED INTERFACE MODULE: Tue Dec 22 14:44:38 2009
-        MODULE INIT_mod
-          INTERFACE 
-            SUBROUTINE INIT
-            END SUBROUTINE INIT
-          END INTERFACE 
-        END MODULE INIT_mod
